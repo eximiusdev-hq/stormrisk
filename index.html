@@ -261,6 +261,53 @@
       font-size: 18px;
     }
 
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .agent-card {
+      background: white;
+      border: 1px solid #dbeafe;
+      border-left: 5px solid #145c63;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .agent-card h3 {
+      color: #0f3d3e;
+      margin-bottom: 8px;
+    }
+
+    .agent-status {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 12px;
+    }
+
+    .agent-output {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .agent-card button {
+      margin-top: 14px;
+    }
+
     .metric {
       font-size: 38px;
       font-weight: bold;
@@ -398,7 +445,8 @@
         height: auto;
       }
 
-      .cards {
+      .cards,
+      .agent-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -409,7 +457,8 @@
     }
 
     @media (max-width: 620px) {
-      .cards {
+      .cards,
+      .agent-grid {
         grid-template-columns: 1fr;
       }
 
@@ -460,6 +509,7 @@
       <button class="nav-btn" onclick="showPage('assets', this)">Asset Inventory</button>
       <button class="nav-btn" onclick="showPage('inspections', this)">Inspections</button>
       <button class="nav-btn" onclick="showPage('sensor', this)">Sensor Readings</button>
+      <button class="nav-btn" onclick="showPage('agents', this)">AI Agents</button>
       <button class="nav-btn" onclick="showPage('reports', this)">Generate Report</button>
 
       <p class="nav-title">Account</p>
@@ -536,6 +586,33 @@
               </div>
             </div>
           </div>
+          <div class="panel" style="margin-top: 24px;">
+            <h3>AI Intelligence Layer</h3>
+            <p class="section-subtitle">These are placeholder AI agents that show where future intelligence will plug into the dashboard. They are simulated for now until connected to a real AI API.</p>
+
+            <div class="agent-grid">
+              <div class="agent-card">
+                <span class="agent-status">Placeholder</span>
+                <h3>StormRisk AI Analyst</h3>
+                <p>Reviews assets, inspections, and sensor readings to identify priority risks.</p>
+                <div class="agent-output">Example: Riverbend Road should be reviewed first due to elevated water level, erosion notes, and high-risk asset status.</div>
+              </div>
+
+              <div class="agent-card">
+                <span class="agent-status">Placeholder</span>
+                <h3>AI Report Writer</h3>
+                <p>Turns staff inputs and field notes into a city-ready compliance summary.</p>
+                <div class="agent-output">Example: Generate an executive summary, audit notes, and recommended corrective actions.</div>
+              </div>
+
+              <div class="agent-card">
+                <span class="agent-status">Placeholder</span>
+                <h3>Compliance Assistant</h3>
+                <p>Checks for missing documentation, overdue inspections, and reporting gaps.</p>
+                <div class="agent-output">Example: Six inspections are overdue and photo evidence is missing for two high-risk assets.</div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="overview" class="page" data-title="Version 1 Roadmap" data-subtitle="The tactical path from fake workflow to real pilot.">
@@ -577,6 +654,36 @@
           <p class="section-subtitle">Search and review sample stormwater assets. In Phase 1, this can use public city data or manually entered test records.</p>
 
           <div class="panel">
+            <h3>Add New Asset</h3>
+            <p class="section-subtitle">Staff can enter a new stormwater asset into the inventory. In a real system, this would save to a database.</p>
+            <div class="form-grid">
+              <div><label>Asset ID</label><input id="newAssetId" type="text" placeholder="Example: SW-006" /></div>
+              <div><label>Asset Type</label><input id="newAssetType" type="text" placeholder="Example: Storm Drain, Culvert, Outfall" /></div>
+              <div><label>Location</label><input id="newAssetLocation" type="text" placeholder="Example: Jonesboro Road" /></div>
+              <div>
+                <label>Condition</label>
+                <select id="newAssetCondition">
+                  <option value="Good">Good</option>
+                  <option value="Fair">Fair</option>
+                  <option value="Poor">Poor</option>
+                </select>
+              </div>
+              <div><label>Last Inspection Date</label><input id="newAssetInspection" type="date" /></div>
+              <div>
+                <label>Risk Level</label>
+                <select id="newAssetRisk">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </div>
+            <button class="button" onclick="addAsset()">Add Asset to Inventory</button>
+            <p id="assetMessage" style="margin-top: 12px; font-weight: bold; color: #145c63;"></p>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Current Asset Inventory</h3>
             <div class="form-grid">
               <div>
                 <label>Search Assets</label>
@@ -622,8 +729,38 @@
           <p class="section-subtitle">This page shows how inspectors would log field activity and track whether corrective action is needed.</p>
 
           <div class="panel">
+            <h3>Add New Inspection</h3>
+            <p class="section-subtitle">Staff can enter an inspection record after visiting a site or reviewing field conditions.</p>
+            <div class="form-grid">
+              <div><label>Inspection Date</label><input id="newInspectionDate" type="date" /></div>
+              <div><label>Inspector</label><input id="newInspector" type="text" placeholder="Example: J. Carter" /></div>
+              <div><label>Location</label><input id="newInspectionLocation" type="text" placeholder="Example: Riverbend Road" /></div>
+              <div><label>Issue Found</label><input id="newIssueFound" type="text" placeholder="Example: Debris buildup" /></div>
+              <div>
+                <label>Follow-Up Needed</label>
+                <select id="newFollowUp">
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+              <div>
+                <label>Status</label>
+                <select id="newInspectionStatus">
+                  <option value="Open">Open</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Urgent">Urgent</option>
+                  <option value="Closed">Closed</option>
+                </select>
+              </div>
+            </div>
+            <button class="button" onclick="addInspection()">Add Inspection Record</button>
+            <p id="inspectionMessage" style="margin-top: 12px; font-weight: bold; color: #145c63;"></p>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Current Inspection Log</h3>
             <div class="table-wrap">
-              <table>
+              <table id="inspectionTable">
                 <thead>
                   <tr>
                     <th>Date</th>
@@ -651,15 +788,47 @@
 
           <div class="cards">
             <div class="card"><h3>Prototype Node</h3><p class="metric">WL-01</p><p>Water-level sensor test unit</p></div>
-            <div class="card"><h3>Current Reading</h3><p class="metric">18.4 in</p><p>Elevated compared to baseline</p></div>
-            <div class="card"><h3>Battery</h3><p class="metric">76%</p><p>Target: months, not days</p></div>
-            <div class="card"><h3>Signal</h3><p class="metric">Good</p><p>Cellular / LoRa test status</p></div>
+            <div class="card"><h3>Current Reading</h3><p class="metric" id="currentSensorReading">18.4 in</p><p>Latest water-level reading</p></div>
+            <div class="card"><h3>Battery</h3><p class="metric" id="currentBattery">76%</p><p>Target: months, not days</p></div>
+            <div class="card"><h3>Signal</h3><p class="metric" id="currentSignal">Good</p><p>Cellular / LoRa test status</p></div>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Add New Sensor Reading</h3>
+            <p class="section-subtitle">Staff can manually enter readings now. Later, this would come directly from an ESP32, Arduino, cellular device, LoRa gateway, Firebase, AWS IoT, or API.</p>
+            <div class="form-grid">
+              <div><label>Reading Time</label><input id="newSensorTime" type="time" /></div>
+              <div><label>Location</label><input id="newSensorLocation" type="text" placeholder="Example: Riverbend Road" /></div>
+              <div><label>Water Level</label><input id="newWaterLevel" type="text" placeholder="Example: 20.1 in" /></div>
+              <div>
+                <label>Condition</label>
+                <select id="newSensorCondition">
+                  <option value="Normal">Normal</option>
+                  <option value="Rising">Rising</option>
+                  <option value="Elevated">Elevated</option>
+                  <option value="Critical">Critical</option>
+                </select>
+              </div>
+              <div>
+                <label>Signal Status</label>
+                <select id="newSignalStatus">
+                  <option value="Good">Good</option>
+                  <option value="Weak">Weak</option>
+                  <option value="Offline">Offline</option>
+                </select>
+              </div>
+              <div><label>Battery Level</label><input id="newBatteryLevel" type="text" placeholder="Example: 74%" /></div>
+            </div>
+            <label>System Interpretation</label>
+            <input id="newSensorInterpretation" type="text" placeholder="Example: Possible blockage or flood risk increasing" />
+            <button class="button" onclick="addSensorReading()">Add Sensor Reading</button>
+            <p id="sensorMessage" style="margin-top: 12px; font-weight: bold; color: #145c63;"></p>
           </div>
 
           <div class="panel" style="margin-top: 24px;">
             <h3>Sample Readings</h3>
             <div class="table-wrap">
-              <table>
+              <table id="sensorTable">
                 <thead><tr><th>Time</th><th>Location</th><th>Water Level</th><th>Condition</th><th>System Interpretation</th></tr></thead>
                 <tbody>
                   <tr><td>08:00 AM</td><td>Riverbend Road</td><td>10.2 in</td><td>Normal</td><td>No immediate action</td></tr>
@@ -667,6 +836,67 @@
                   <tr><td>12:00 PM</td><td>Riverbend Road</td><td>18.4 in</td><td>Elevated</td><td>Possible blockage or flood risk increasing</td></tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="agents" class="page" data-title="AI Agents" data-subtitle="Placeholder intelligence modules to connect later with OpenAI, Firebase, Supabase, or another AI service.">
+          <h2 class="section-title">AI Agent Placeholders</h2>
+          <p class="section-subtitle">These agents do not call a real AI API yet. They show the product vision and where the future AI logic will connect.</p>
+
+          <div class="agent-grid">
+            <div class="agent-card">
+              <span class="agent-status">Future Agent</span>
+              <h3>1. StormRisk AI Analyst</h3>
+              <p><strong>Purpose:</strong> Review assets, inspections, and sensor readings to explain where risk is increasing.</p>
+              <p><strong>Future Output:</strong> Risk explanation, priority ranking, and recommended next action.</p>
+              <button class="button secondary" onclick="runAgentDemo('riskAgentOutput', 'StormRisk AI Analyst identified Riverbend Road as the highest priority because the outfall is marked poor, water levels are elevated, and erosion was observed during inspection. Recommended action: field verification, debris removal, photo documentation, and corrective action tracking.')">Run Demo Analysis</button>
+              <div id="riskAgentOutput" class="agent-output">Demo output will appear here.</div>
+            </div>
+
+            <div class="agent-card">
+              <span class="agent-status">Future Agent</span>
+              <h3>2. AI Report Writer</h3>
+              <p><strong>Purpose:</strong> Convert staff entries into professional report language for city leadership, compliance files, and audits.</p>
+              <p><strong>Future Output:</strong> Executive summary, compliance narrative, audit notes, and recommended actions.</p>
+              <button class="button secondary" onclick="runAgentDemo('reportAgentOutput', 'AI Report Writer drafted a compliance summary using inspection totals, high-risk asset counts, water-level alerts, and staff field notes. The report recommends prioritizing high-risk locations before the next reporting deadline.')">Run Demo Writer</button>
+              <div id="reportAgentOutput" class="agent-output">Demo output will appear here.</div>
+            </div>
+
+            <div class="agent-card">
+              <span class="agent-status">Future Agent</span>
+              <h3>3. Compliance Assistant</h3>
+              <p><strong>Purpose:</strong> Identify missing documentation, overdue inspections, reporting gaps, and audit readiness issues.</p>
+              <p><strong>Future Output:</strong> Missing item checklist and compliance readiness score.</p>
+              <button class="button secondary" onclick="runAgentDemo('complianceAgentOutput', 'Compliance Assistant found six overdue inspections, missing photo documentation for Riverbend Road, and an incomplete corrective action log for Oak Valley Drive.')">Run Demo Check</button>
+              <div id="complianceAgentOutput" class="agent-output">Demo output will appear here.</div>
+            </div>
+
+            <div class="agent-card">
+              <span class="agent-status">Future Agent</span>
+              <h3>4. Field Note Cleaner</h3>
+              <p><strong>Purpose:</strong> Turn messy inspector notes into clean professional language.</p>
+              <p><strong>Future Output:</strong> Clean inspection narrative suitable for reports.</p>
+              <button class="button secondary" onclick="runAgentDemo('notesAgentOutput', 'Cleaned note: Field staff observed elevated water levels, debris accumulation near the drain opening, and visible erosion. Follow-up inspection and corrective action documentation are recommended.')">Run Demo Cleaner</button>
+              <div id="notesAgentOutput" class="agent-output">Demo output will appear here.</div>
+            </div>
+
+            <div class="agent-card">
+              <span class="agent-status">Future Agent</span>
+              <h3>5. Work Order Recommender</h3>
+              <p><strong>Purpose:</strong> Suggest maintenance work orders based on risk, inspection findings, and sensor alerts.</p>
+              <p><strong>Future Output:</strong> Suggested task, priority level, and assignment recommendation.</p>
+              <button class="button secondary" onclick="runAgentDemo('workOrderAgentOutput', 'Work Order Recommender suggests creating a high-priority debris removal and erosion review task for Riverbend Road, assigned within 48 hours.')">Run Demo Work Order</button>
+              <div id="workOrderAgentOutput" class="agent-output">Demo output will appear here.</div>
+            </div>
+
+            <div class="agent-card">
+              <span class="agent-status">Future Agent</span>
+              <h3>6. Sensor Alert Interpreter</h3>
+              <p><strong>Purpose:</strong> Explain what sensor readings may mean instead of showing raw numbers only.</p>
+              <p><strong>Future Output:</strong> Plain-language alert interpretation and escalation recommendation.</p>
+              <button class="button secondary" onclick="runAgentDemo('sensorAgentOutput', 'Sensor Alert Interpreter detected a rising water-level trend above baseline. This may indicate blockage, restricted flow, or localized flood risk.')">Run Demo Interpreter</button>
+              <div id="sensorAgentOutput" class="agent-output">Demo output will appear here.</div>
             </div>
           </div>
         </section>
@@ -705,6 +935,7 @@
             <textarea id="fieldNotes">Debris buildup and erosion were observed near Riverbend Road outfall. Oak Valley Drive culvert requires follow-up inspection and photo documentation.</textarea>
 
             <button class="button" onclick="generateReport()">Generate Report Summary</button>
+            <button class="button secondary" style="margin-left: 10px;" onclick="generateAIReportPlaceholder()">Generate AI-Style Report Placeholder</button>
             <div id="reportOutput"></div>
           </div>
         </section>
@@ -755,6 +986,128 @@
       }
     }
 
+    function formatDateForDisplay(dateValue) {
+      if (!dateValue) return '';
+      const parts = dateValue.split('-');
+      if (parts.length !== 3) return dateValue;
+      return `${parts[1]}/${parts[2]}/${parts[0]}`;
+    }
+
+    function getBadgeClass(value) {
+      const normalized = String(value).toLowerCase();
+      if (normalized.includes('high') || normalized.includes('urgent') || normalized.includes('critical')) return 'high';
+      if (normalized.includes('medium') || normalized.includes('pending') || normalized.includes('rising') || normalized.includes('elevated')) return 'medium';
+      if (normalized.includes('low') || normalized.includes('closed') || normalized.includes('normal')) return 'low';
+      return 'open';
+    }
+
+    function addAsset() {
+      const id = document.getElementById('newAssetId').value.trim();
+      const type = document.getElementById('newAssetType').value.trim();
+      const location = document.getElementById('newAssetLocation').value.trim();
+      const condition = document.getElementById('newAssetCondition').value;
+      const inspection = document.getElementById('newAssetInspection').value;
+      const risk = document.getElementById('newAssetRisk').value;
+      const message = document.getElementById('assetMessage');
+
+      if (!id || !type || !location) {
+        message.innerText = 'Please enter Asset ID, Asset Type, and Location.';
+        return;
+      }
+
+      const tbody = document.querySelector('#assetTable tbody');
+      const row = document.createElement('tr');
+      row.setAttribute('data-risk', risk);
+      row.innerHTML = `
+        <td>${id}</td>
+        <td>${type}</td>
+        <td>${location}</td>
+        <td>${condition}</td>
+        <td>${formatDateForDisplay(inspection)}</td>
+        <td><span class="badge ${risk}">${risk.charAt(0).toUpperCase() + risk.slice(1)}</span></td>
+      `;
+      tbody.appendChild(row);
+
+      document.getElementById('newAssetId').value = '';
+      document.getElementById('newAssetType').value = '';
+      document.getElementById('newAssetLocation').value = '';
+      document.getElementById('newAssetInspection').value = '';
+      message.innerText = 'New asset added to the inventory.';
+      filterAssets();
+    }
+
+    function addInspection() {
+      const date = document.getElementById('newInspectionDate').value;
+      const inspector = document.getElementById('newInspector').value.trim();
+      const location = document.getElementById('newInspectionLocation').value.trim();
+      const issue = document.getElementById('newIssueFound').value.trim();
+      const followUp = document.getElementById('newFollowUp').value;
+      const status = document.getElementById('newInspectionStatus').value;
+      const message = document.getElementById('inspectionMessage');
+
+      if (!date || !inspector || !location || !issue) {
+        message.innerText = 'Please enter Date, Inspector, Location, and Issue Found.';
+        return;
+      }
+
+      const tbody = document.querySelector('#inspectionTable tbody');
+      const badgeClass = getBadgeClass(status);
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${formatDateForDisplay(date)}</td>
+        <td>${inspector}</td>
+        <td>${location}</td>
+        <td>${issue}</td>
+        <td>${followUp}</td>
+        <td><span class="badge ${badgeClass}">${status}</span></td>
+      `;
+      tbody.appendChild(row);
+
+      document.getElementById('newInspectionDate').value = '';
+      document.getElementById('newInspector').value = '';
+      document.getElementById('newInspectionLocation').value = '';
+      document.getElementById('newIssueFound').value = '';
+      message.innerText = 'New inspection record added.';
+    }
+
+    function addSensorReading() {
+      const time = document.getElementById('newSensorTime').value;
+      const location = document.getElementById('newSensorLocation').value.trim();
+      const waterLevel = document.getElementById('newWaterLevel').value.trim();
+      const condition = document.getElementById('newSensorCondition').value;
+      const signal = document.getElementById('newSignalStatus').value;
+      const battery = document.getElementById('newBatteryLevel').value.trim();
+      const interpretation = document.getElementById('newSensorInterpretation').value.trim();
+      const message = document.getElementById('sensorMessage');
+
+      if (!time || !location || !waterLevel || !interpretation) {
+        message.innerText = 'Please enter Time, Location, Water Level, and System Interpretation.';
+        return;
+      }
+
+      const tbody = document.querySelector('#sensorTable tbody');
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${time}</td>
+        <td>${location}</td>
+        <td>${waterLevel}</td>
+        <td>${condition}</td>
+        <td>${interpretation}</td>
+      `;
+      tbody.appendChild(row);
+
+      document.getElementById('currentSensorReading').innerText = waterLevel;
+      document.getElementById('currentSignal').innerText = signal;
+      if (battery) document.getElementById('currentBattery').innerText = battery;
+
+      document.getElementById('newSensorTime').value = '';
+      document.getElementById('newSensorLocation').value = '';
+      document.getElementById('newWaterLevel').value = '';
+      document.getElementById('newBatteryLevel').value = '';
+      document.getElementById('newSensorInterpretation').value = '';
+      message.innerText = 'New sensor reading added and dashboard card updated.';
+    }
+
     function filterAssets() {
       const input = document.getElementById('assetSearch');
       const riskFilter = document.getElementById('riskFilter');
@@ -770,6 +1123,39 @@
         const matchesRisk = selectedRisk === '' || rowRisk === selectedRisk;
         row.style.display = matchesText && matchesRisk ? '' : 'none';
       });
+    }
+
+    function runAgentDemo(outputId, message) {
+      const output = document.getElementById(outputId);
+      if (output) {
+        output.innerText = message;
+      }
+    }
+
+    function generateAIReportPlaceholder() {
+      const output = document.getElementById('reportOutput');
+      const notes = document.getElementById('fieldNotes').value;
+      const zone = document.getElementById('reportZone').value;
+      const waterLevel = document.getElementById('waterLevel').value;
+      const alertType = document.getElementById('alertType').value;
+
+      output.innerHTML = `
+        <h3>AI-Style Report Placeholder</h3>
+        <p><strong>StormRisk AI Analyst:</strong> This is a simulated AI output. No real AI API is connected yet.</p>
+        <br />
+        <h4>AI Executive Summary</h4>
+        <p>
+          The ${zone} area shows signs of increased stormwater infrastructure risk. The reported water-level condition is <strong>${waterLevel}</strong>, and the current system alert is <strong>${alertType}</strong>. Based on the field observations, this location should be prioritized for review, documentation, and corrective action planning.
+        </p>
+        <br />
+        <h4>Cleaned Field Notes</h4>
+        <p>${notes}</p>
+        <br />
+        <h4>AI Recommended Next Steps</h4>
+        <p>
+          Assign a follow-up inspection, capture photo evidence, verify whether debris or restricted flow is present, update the corrective action log, and include this location in the next compliance review.
+        </p>
+      `;
     }
 
     function generateReport() {
