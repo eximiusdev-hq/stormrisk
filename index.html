@@ -369,8 +369,8 @@
       <p class="eyebrow">Critical Infrastructure • Compliance • Risk Intelligence</p>
       <h2>Stormwater compliance and infrastructure risk in one city-ready dashboard.</h2>
       <p>
-        A one-file prototype that helps cities track stormwater assets, inspections,
-        compliance risks, maintenance issues, reporting needs, and future AI risk scoring.
+        A one-file prototype built around one goal: prove that stormwater system data can be captured,
+        organized, interpreted, and turned into useful visibility for cities before overbuilding the full product.
       </p>
       <a class="button" href="#dashboard" onclick="showPage('dashboard')">View Prototype Dashboard</a>
     </div>
@@ -411,9 +411,7 @@
         <div class="panel">
           <h3>Executive Risk Summary</h3>
           <p>
-            The system has identified several infrastructure assets requiring attention.
-            High-risk assets should be reviewed first because they may create compliance,
-            flooding, maintenance, or audit exposure for the city.
+            Version 1 proves visibility. The city does not need raw sensor data first; it needs to know where risk is increasing, which assets need attention, and what should be documented before a compliance issue becomes expensive.
           </p>
           <ul class="priority-list">
             <li><strong>Priority 1:</strong> Riverbend Road outfall erosion requires corrective action documentation.</li>
@@ -423,22 +421,22 @@
         </div>
 
         <div class="panel">
-          <h3>Compliance Readiness</h3>
+          <h3>Prototype Readiness</h3>
           <div class="progress-wrap">
             <div class="progress-row">
-              <div class="progress-label"><span>Inspection Completion</span><span>84%</span></div>
+              <div class="progress-label"><span>Fake Platform Workflow</span><span>84%</span></div>
               <div class="bar"><span style="width:84%"></span></div>
             </div>
             <div class="progress-row">
-              <div class="progress-label"><span>Photo Documentation</span><span>68%</span></div>
+              <div class="progress-label"><span>Sample Sensor Data</span><span>68%</span></div>
               <div class="bar"><span style="width:68%"></span></div>
             </div>
             <div class="progress-row">
-              <div class="progress-label"><span>Corrective Action Logs</span><span>57%</span></div>
+              <div class="progress-label"><span>Water-Level Prototype</span><span>57%</span></div>
               <div class="bar"><span style="width:57%"></span></div>
             </div>
             <div class="progress-row">
-              <div class="progress-label"><span>Audit Readiness</span><span>72%</span></div>
+              <div class="progress-label"><span>Pilot Package Readiness</span><span>72%</span></div>
               <div class="bar"><span style="width:72%"></span></div>
             </div>
           </div>
@@ -447,45 +445,51 @@
     </section>
 
     <section id="home" class="page">
-      <h2 class="section-title">Platform Overview</h2>
+      <h2 class="section-title">Version 1 Goal</h2>
       <p class="section-subtitle">
-        Version 1 focuses on the highest-value foundation: compliance visibility, asset inventory,
-        inspection tracking, and audit-ready reporting.
+        Do not build the full system yet. Version 1 proves one thing: “We can get data from inside stormwater systems and make it useful to cities.”
       </p>
 
       <div class="cards">
         <div class="card">
-          <h3>Asset Tracking</h3>
-          <p>Track storm drains, pipes, outfalls, basins, culverts, and maintenance history.</p>
+          <h3>1. Fake the System</h3>
+          <p>Use sample data, public city data, inspection logs, photos, alerts, and map views to prove the workflow before hardware.</p>
         </div>
         <div class="card">
-          <h3>Compliance Monitoring</h3>
-          <p>Monitor inspections, documentation gaps, overdue items, and reporting deadlines.</p>
+          <h3>2. Prototype Sensing</h3>
+          <p>Start with one measurement: water level detection. Use simple off-the-shelf parts before inventing custom hardware.</p>
         </div>
         <div class="card">
-          <h3>Risk Intelligence</h3>
-          <p>Identify high-risk infrastructure before it becomes an audit, flood, or public issue.</p>
+          <h3>3. Show Visibility</h3>
+          <p>Turn raw readings into city-ready insights like flood risk increasing, possible blockage, or maintenance recommended.</p>
         </div>
         <div class="card">
-          <h3>Reporting</h3>
-          <p>Create summaries for city leadership, auditors, regulators, and contractors.</p>
+          <h3>4. Package a Pilot</h3>
+          <p>Sell a small deployable stormwater monitoring pilot with dashboard visibility, alerts, and compliance reporting.</p>
         </div>
       </div>
 
       <section class="panel roadmap" style="margin-top: 35px;">
-        <h2 class="section-title">Product Roadmap</h2>
+        <h2 class="section-title">Tactical Product Roadmap</h2>
         <ul>
-          <li><strong>Stage 1:</strong> Compliance system, asset tracking, inspection tracking, and reporting.</li>
-          <li><strong>Stage 2:</strong> Work orders, contractor tracking, maintenance costs, and budgeting.</li>
-          <li><strong>Stage 3:</strong> Monitoring dashboards, alerts, and data insights.</li>
-          <li><strong>Stage 4:</strong> AI risk scoring, predictive analytics, audit simulation, and RFP tools.</li>
+          <li><strong>Phase 1: Build without hardware.</strong> Create an asset map, field logging workflow, fake monitoring readings, and compliance output.</li>
+          <li><strong>Phase 2: Build one sensing prototype.</strong> Measure water level using an ESP32 or Arduino, waterproof ultrasonic sensor, battery pack, and IP67+ enclosure.</li>
+          <li><strong>Phase 3: Connect the prototype.</strong> Send readings to a simple dashboard using cellular, LoRa, Firebase, AWS IoT, or a basic API.</li>
+          <li><strong>Phase 4: Harden into a pilot.</strong> Improve waterproofing, mounting, battery life, underground signal reliability, and alert quality.</li>
         </ul>
+      </section>
+
+      <section class="panel" style="margin-top: 35px;">
+        <h2 class="section-title">First Real Product</h2>
+        <p>
+          The first real product is not a full infrastructure platform. It is a small deployable stormwater monitoring system plus dashboard that gives cities visibility into high-risk areas they currently cannot see.
+        </p>
       </section>
     </section>
 
     <section id="assets" class="page">
       <h2 class="section-title">Stormwater Asset Inventory</h2>
-      <p class="section-subtitle">Search and review the city’s stormwater infrastructure assets.</p>
+      <p class="section-subtitle">Search and review sample stormwater assets. In Phase 1, this can use public city data or manually entered test records.</p>
 
       <div class="panel">
         <input type="text" id="assetSearch" placeholder="Search assets, locations, risk levels..." onkeyup="filterAssets()" />
@@ -609,7 +613,7 @@
 
     <section id="reports" class="page">
       <h2 class="section-title">Compliance Reports</h2>
-      <p class="section-subtitle">Generate a quick executive summary for compliance, audit, and leadership review.</p>
+      <p class="section-subtitle">Generate a quick executive summary that converts inspections, alerts, and simulated sensor readings into city-ready action language.</p>
 
       <div class="panel">
         <h3>Monthly Compliance Summary</h3>
@@ -667,7 +671,7 @@
 
     function generateReport() {
       const output = document.getElementById('reportOutput');
-      output.innerText = 'Report generated: 42 inspections completed, 14 open issues, 4 high-risk assets, and 6 overdue inspections. Corrective action should begin with Riverbend Road and Oak Valley Drive.';
+      output.innerText = 'Report generated: 42 inspections completed, 14 open issues, 4 high-risk assets, and 6 overdue inspections. Simulated monitoring shows elevated water-level risk at Riverbend Road. Corrective action should begin with Riverbend Road and Oak Valley Drive.';
     }
   </script>
 
