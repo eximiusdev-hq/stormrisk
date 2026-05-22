@@ -227,13 +227,14 @@
       letter-spacing: 0.4px;
     }
 
-    input, select {
+    input, select, textarea {
       padding: 12px;
       border-radius: 10px;
       border: 1px solid #cbd5e1;
       margin: 5px 10px 15px 0;
       min-width: 220px;
       background: white;
+      width: 100%;
     }
 
     .roadmap ul {
@@ -616,21 +617,67 @@
       <p class="section-subtitle">Generate a quick executive summary that converts inspections, alerts, and simulated sensor readings into city-ready action language.</p>
 
       <div class="panel">
-        <h3>Monthly Compliance Summary</h3>
-        <p><strong>Reporting Month:</strong> May 2026</p>
-        <p><strong>Total Inspections Completed:</strong> 42</p>
-        <p><strong>Open Maintenance Issues:</strong> 14</p>
-        <p><strong>High-Risk Assets:</strong> 4</p>
-        <p><strong>Overdue Inspections:</strong> 6</p>
-        <br />
-        <h3>Audit Notes</h3>
-        <p>
-          The city should prioritize assets marked high risk, document corrective action,
-          upload photo evidence, and update inspection records before the next reporting deadline.
+        <h3>Enter Report Information</h3>
+        <p style="margin-bottom: 18px; color: #52616f;">
+          This section shows how a city employee, inspector, or analyst would enter information before generating a stormwater compliance report.
         </p>
-        <br />
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px;">
+          <label>
+            Reporting Month<br />
+            <input id="reportMonth" type="text" value="May 2026" />
+          </label>
+
+          <label>
+            Reporting Area / Zone<br />
+            <input id="reportZone" type="text" value="Riverbend Road / Oak Valley Zone" />
+          </label>
+
+          <label>
+            Total Inspections Completed<br />
+            <input id="completedInspections" type="number" value="42" />
+          </label>
+
+          <label>
+            Open Maintenance Issues<br />
+            <input id="openIssues" type="number" value="14" />
+          </label>
+
+          <label>
+            High-Risk Assets<br />
+            <input id="highRiskAssets" type="number" value="4" />
+          </label>
+
+          <label>
+            Overdue Inspections<br />
+            <input id="overdueInspections" type="number" value="6" />
+          </label>
+
+          <label>
+            Water Level Reading<br />
+            <input id="waterLevel" type="text" value="Elevated" />
+          </label>
+
+          <label>
+            Alert Type<br />
+            <select id="alertType">
+              <option value="Possible blockage detected">Possible blockage detected</option>
+              <option value="Flood risk increasing">Flood risk increasing</option>
+              <option value="Maintenance recommended">Maintenance recommended</option>
+              <option value="No urgent alert">No urgent alert</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Inspector Notes / Field Observations<br />
+          <textarea id="fieldNotes" style="width: 100%; min-height: 100px; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; margin-top: 6px; font-family: Arial, sans-serif;">Debris buildup and erosion were observed near Riverbend Road outfall. Oak Valley Drive culvert requires follow-up inspection and photo documentation.</textarea>
+        </label>
+
+        <br /><br />
         <button class="button" onclick="generateReport()">Generate Report Summary</button>
-        <p id="reportOutput" style="margin-top: 20px; font-weight: bold;"></p>
+
+        <div id="reportOutput" style="margin-top: 25px; padding: 22px; background: #f8fafc; border-radius: 14px; border: 1px solid #e2e8f0; font-weight: normal;"></div>
       </div>
     </section>
 
@@ -671,7 +718,45 @@
 
     function generateReport() {
       const output = document.getElementById('reportOutput');
-      output.innerText = 'Report generated: 42 inspections completed, 14 open issues, 4 high-risk assets, and 6 overdue inspections. Simulated monitoring shows elevated water-level risk at Riverbend Road. Corrective action should begin with Riverbend Road and Oak Valley Drive.';
+
+      const month = document.getElementById('reportMonth').value;
+      const zone = document.getElementById('reportZone').value;
+      const completed = document.getElementById('completedInspections').value;
+      const open = document.getElementById('openIssues').value;
+      const highRisk = document.getElementById('highRiskAssets').value;
+      const overdue = document.getElementById('overdueInspections').value;
+      const waterLevel = document.getElementById('waterLevel').value;
+      const alertType = document.getElementById('alertType').value;
+      const notes = document.getElementById('fieldNotes').value;
+
+      output.innerHTML = `
+        <h3>Generated Stormwater Compliance Report</h3>
+        <p><strong>Reporting Month:</strong> ${month}</p>
+        <p><strong>Reporting Area / Zone:</strong> ${zone}</p>
+        <p><strong>Total Inspections Completed:</strong> ${completed}</p>
+        <p><strong>Open Maintenance Issues:</strong> ${open}</p>
+        <p><strong>High-Risk Assets:</strong> ${highRisk}</p>
+        <p><strong>Overdue Inspections:</strong> ${overdue}</p>
+        <p><strong>Water Level Reading:</strong> ${waterLevel}</p>
+        <p><strong>System Alert:</strong> ${alertType}</p>
+        <br />
+        <h4>Executive Summary</h4>
+        <p>
+          During the ${month} reporting period, the ${zone} area recorded ${completed} completed inspections,
+          ${open} open maintenance issues, ${highRisk} high-risk assets, and ${overdue} overdue inspections.
+          Monitoring data shows the current water level condition as <strong>${waterLevel}</strong>, with a system alert of
+          <strong>${alertType}</strong>.
+        </p>
+        <br />
+        <h4>Field Notes</h4>
+        <p>${notes}</p>
+        <br />
+        <h4>Recommended Action</h4>
+        <p>
+          The city should prioritize high-risk assets, assign follow-up inspections, document corrective action,
+          capture photo evidence, and update the compliance file before the next reporting deadline.
+        </p>
+      `;
     }
   </script>
 
