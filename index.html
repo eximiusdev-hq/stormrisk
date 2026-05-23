@@ -188,6 +188,35 @@
       margin-top: 18px;
     }
 
+    .subnav-group {
+      border-left: 2px solid rgba(245, 185, 66, 0.55);
+      margin: -2px 0 10px 12px;
+      padding-left: 10px;
+    }
+
+    .subnav-btn {
+      font-size: 13px;
+      padding: 10px 12px;
+      margin-bottom: 5px;
+      color: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .subnav-btn.active,
+    .subnav-btn:hover {
+      background: rgba(245, 185, 66, 0.18);
+      border-color: rgba(245, 185, 66, 0.35);
+      color: white;
+    }
+
+    .layer-child {
+      margin-left: 14px;
+      width: calc(100% - 14px);
+      font-size: 12px;
+      color: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.025);
+    }
+
     .main-area {
       min-width: 0;
     }
@@ -409,6 +438,411 @@
       margin-bottom: 20px;
     }
 
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .tab-btn {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      padding: 11px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s ease;
+      font-size: 13px;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: #145c63;
+      color: white;
+      border-color: #145c63;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active-tab {
+      display: block;
+    }
+
+    .tab-helper {
+      background: #fff7e6;
+      border: 1px solid #f5d48b;
+      color: #6b4e00;
+      padding: 14px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    .docs-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .docs-sidebar {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 18px;
+      position: sticky;
+      top: 96px;
+    }
+
+    .docs-sidebar h3 {
+      color: #0f3d3e;
+      margin-bottom: 12px;
+    }
+
+    .docs-link {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      padding: 10px 8px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #334155;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .docs-link:hover,
+    .docs-link.active {
+      background: #e7f2f2;
+      color: #0f3d3e;
+    }
+
+    .source-card {
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid #145c63;
+      border-radius: 16px;
+      padding: 18px;
+      background: white;
+      margin-bottom: 16px;
+    }
+
+    .quick-directory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .quick-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .quick-card h3 {
+      color: #0f3d3e;
+      margin-bottom: 8px;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .keyword-pill {
+      background: #e7f2f2;
+      color: #0f3d3e;
+      border: 1px solid #cce2e2;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .missing-list {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #334155;
+    }
+
+    .missing-list li {
+      margin-bottom: 7px;
+    }
+
+    .source-card h3 {
+      margin-bottom: 8px;
+      color: #0f3d3e;
+    }
+
+    .source-meta {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .source-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .status-pill {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 12px;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-pill.review {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .docs-section {
+      display: none;
+    }
+
+    .docs-section.active-docs-section {
+      display: block;
+    }
+
+    .docs-console {
+      background: #0b1220;
+      color: #e5e7eb;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #1f2937;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+
+    .docs-console-topbar {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 14px;
+      padding: 18px;
+      background: #111827;
+      border-bottom: 1px solid #243244;
+      align-items: center;
+    }
+
+    .docs-search {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: white;
+      margin: 0;
+    }
+
+    .docs-search::placeholder {
+      color: #94a3b8;
+    }
+
+    .docs-console-body {
+      display: grid;
+      grid-template-columns: 260px 1fr 300px;
+      min-height: 720px;
+    }
+
+    .docs-nav-panel {
+      background: #0f172a;
+      border-right: 1px solid #243244;
+      padding: 18px;
+      overflow-y: auto;
+    }
+
+    .docs-main-panel {
+      background: #111827;
+      padding: 26px;
+      overflow-y: auto;
+    }
+
+    .docs-review-panel {
+      background: #0f172a;
+      border-left: 1px solid #243244;
+      padding: 18px;
+      overflow-y: auto;
+    }
+
+    .docs-nav-label {
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      margin: 18px 0 8px;
+      font-weight: bold;
+    }
+
+    .docs-nav-btn {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #cbd5e1;
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .docs-nav-btn:hover,
+    .docs-nav-btn.active {
+      background: #1f2937;
+      border-color: #334155;
+      color: white;
+    }
+
+    .docs-hero-title {
+      font-size: 36px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: #f8fafc;
+    }
+
+    .docs-muted {
+      color: #94a3b8;
+    }
+
+    .docs-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .docs-card {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 18px;
+      padding: 20px;
+      color: #e5e7eb;
+    }
+
+    .docs-card h3 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .docs-card p {
+      color: #cbd5e1;
+    }
+
+    .docs-source-list {
+      margin-top: 20px;
+    }
+
+    .docs-source-item {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .docs-source-item:hover {
+      border-color: #38bdf8;
+    }
+
+    .docs-source-item h3 {
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .docs-source-item p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .docs-detail-box {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .docs-detail-box h3,
+    .docs-detail-box h4 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .docs-detail-box ul {
+      margin-left: 20px;
+      color: #cbd5e1;
+    }
+
+    .docs-detail-box li {
+      margin-bottom: 8px;
+    }
+
+    .docs-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .docs-pill {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #134e4a;
+      color: #99f6e4;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .docs-pill.warning {
+      background: #78350f;
+      color: #fde68a;
+    }
+
+    .docs-pill.locked {
+      background: #7f1d1d;
+      color: #fecaca;
+    }
+
+    .bookmark-list {
+      margin-top: 14px;
+    }
+
+    .bookmark-item {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    .review-score {
+      font-size: 42px;
+      font-weight: bold;
+      color: #f5b942;
+      line-height: 1;
+      margin: 12px 0;
+    }
+
     .info-strip {
       padding: 14px;
       background: #ecfeff;
@@ -446,19 +880,27 @@
       }
 
       .cards,
-      .agent-grid {
+      .agent-grid,
+      .quick-directory-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .grid-two,
-      .form-grid {
+      .form-grid,
+      .docs-layout {
         grid-template-columns: 1fr;
+      }
+
+      .docs-sidebar {
+        position: relative;
+        top: auto;
       }
     }
 
     @media (max-width: 620px) {
       .cards,
-      .agent-grid {
+      .agent-grid,
+      .quick-directory-grid {
         grid-template-columns: 1fr;
       }
 
@@ -506,6 +948,15 @@
       <p class="nav-title">Main Menu</p>
       <button class="nav-btn active" onclick="showPage('dashboard', this)">Dashboard</button>
       <button class="nav-btn" onclick="showPage('overview', this)">Version 1 Roadmap</button>
+      <button class="nav-btn" onclick="showPage('strategy', this)">Product Strategy</button>
+      <div class="subnav-group">
+        <button class="nav-btn subnav-btn" onclick="showPage('complianceLayer', this)">↳ Layer 1: Compliance</button>
+        <button class="nav-btn subnav-btn layer-child" onclick="showPage('countyDirectory', this)">  ↳ County Compliance Directory</button>
+        <button class="nav-btn subnav-btn layer-child" onclick="showPage('resourceLibrary', this)">  ↳ Compliance Docs Library</button>
+        <button class="nav-btn subnav-btn" onclick="showPage('operationsLayer', this)">↳ Layer 2: Operations</button>
+        <button class="nav-btn subnav-btn" onclick="showPage('financialLayer', this)">↳ Layer 3: Financial / Contract</button>
+        <button class="nav-btn subnav-btn" onclick="showPage('strategicPosition', this)">↳ Strategic Position</button>
+      </div>
       <button class="nav-btn" onclick="showPage('assets', this)">Asset Inventory</button>
       <button class="nav-btn" onclick="showPage('inspections', this)">Inspections</button>
       <button class="nav-btn" onclick="showPage('sensor', this)">Sensor Readings</button>
@@ -646,6 +1097,674 @@
               <li><strong>Phase 3: Connect the prototype.</strong> Send readings to a simple dashboard using cellular, LoRa, Firebase, AWS IoT, or a basic API.</li>
               <li><strong>Phase 4: Harden into a pilot.</strong> Improve waterproofing, mounting, battery life, underground signal reliability, and alert quality.</li>
             </ul>
+          </div>
+        </section>
+
+        <section id="strategy" class="page" data-title="Product Strategy" data-subtitle="The three-layer strategy for becoming a sticky municipal SaaS platform.">
+          <h2 class="section-title">StormRisk Product Strategy</h2>
+          <p class="section-subtitle">
+            The goal is not to stay a small consulting tool. The goal is to enter through compliance, become essential through operations, and become hard to replace by helping cities plan spending, vendors, and contracts.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h3>1. Compliance Layer</h3>
+              <p><strong>Entry Point</strong></p>
+              <p>Tracking, reporting, inspection logs, documentation, and audit readiness. This is what gets StormRisk in the door because cities already have regulatory pressure.</p>
+            </div>
+            <div class="card">
+              <h3>2. Operations Layer</h3>
+              <p><strong>Stickiness</strong></p>
+              <p>Work orders, maintenance tracking, contractor management, follow-up actions, and field accountability. This makes cities rely on the platform weekly or daily.</p>
+            </div>
+            <div class="card">
+              <h3>3. Financial / Contract Layer</h3>
+              <p><strong>Power Move</strong></p>
+              <p>RFP generation, budget forecasting, vendor performance tracking, project oversight, and capital planning. This connects StormRisk to how cities spend money.</p>
+            </div>
+            <div class="card">
+              <h3>Strategic Position</h3>
+              <p><strong>Own the Niche</strong></p>
+              <p>Do not position this as generic water software. Position it as stormwater compliance and risk management for municipalities under EPA MS4 requirements.</p>
+            </div>
+          </div>
+
+          <div class="panel roadmap" style="margin-top: 24px;">
+            <h3>Real Scaling Play</h3>
+            <ul>
+              <li><strong>Step 1: Land 3–5 cities manually.</strong> Use pilots, direct conversations, and hands-on setup to learn what cities actually need.</li>
+              <li><strong>Step 2: Productize everything.</strong> Every spreadsheet, report, checklist, asset process, and workflow becomes a feature, template, or automation.</li>
+              <li><strong>Step 3: Turn the workflow into SaaS.</strong> The goal is for cities to log into StormRisk every week to run compliance, inspections, and reporting.</li>
+              <li><strong>Step 4: Own a specific niche.</strong> Use precise positioning: stormwater compliance for municipalities under EPA MS4 requirements.</li>
+              <li><strong>Step 5: Expand horizontally.</strong> After stormwater, expand into wastewater compliance, water treatment tracking, and broader environmental reporting.</li>
+            </ul>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Why This Makes StormRisk Hard to Replace</h3>
+            <p>
+              If StormRisk only tracks inspections, it is useful. If it manages compliance, daily operations, work orders, vendors, RFPs, and budget forecasting, it becomes part of how a city operates and spends money. That is where the platform becomes sticky, valuable, and difficult to replace.
+            </p>
+          </div>
+        </section>
+
+        <section id="complianceLayer" class="page" data-title="Layer 1: Compliance" data-subtitle="The entry point: tracking, reporting, and audit readiness.">
+          <h2 class="section-title">Layer 1: Compliance Layer</h2>
+          <p class="section-subtitle">
+            This is the entry point. Cities already have stormwater compliance pressure, reporting obligations, inspection requirements, and audit risk. StormRisk gets in the door by helping them organize proof, track work, and generate reports.
+          </p>
+
+          <div class="cards">
+            <div class="card"><h3>Permit Profile</h3><p class="metric">1</p><p>City, permit, reporting year, and responsible official.</p></div>
+            <div class="card"><h3>Inspection Logs</h3><p class="metric">42</p><p>Field inspections documented this period.</p></div>
+            <div class="card"><h3>Corrective Actions</h3><p class="metric">14</p><p>Open items requiring follow-up or proof.</p></div>
+            <div class="card"><h3>Audit Readiness</h3><p class="metric">72%</p><p>Documentation completion score.</p></div>
+          </div>
+
+          <div class="panel" style="margin-top: 24px; background: #f8fafc;">
+            <h3>Compliance Subpages</h3>
+            <p class="section-subtitle">Use these subpages to organize county-specific rules and verified source materials before AI audit review.</p>
+            <button class="button secondary" onclick="showPage('countyDirectory')">Open County Compliance Directory</button>
+            <button class="button secondary" style="margin-left: 10px;" onclick="showPage('resourceLibrary')">Open Compliance Docs Library</button>
+          </div>
+
+          <div class="tab-bar">
+            <button class="tab-btn active" onclick="showComplianceTab('permitTab', this)">Permit Profile</button>
+            <button class="tab-btn" onclick="showComplianceTab('assetComplianceTab', this)">Asset Compliance</button>
+            <button class="tab-btn" onclick="showComplianceTab('inspectionTab', this)">Inspection Log</button>
+            <button class="tab-btn" onclick="showComplianceTab('correctiveTab', this)">Corrective Action</button>
+            <button class="tab-btn" onclick="showComplianceTab('incidentTab', this)">Illicit Discharge</button>
+            <button class="tab-btn" onclick="showComplianceTab('outreachTab', this)">Public Education</button>
+            <button class="tab-btn" onclick="showComplianceTab('participationTab', this)">Public Participation</button>
+            <button class="tab-btn" onclick="showComplianceTab('constructionTab', this)">Construction Runoff</button>
+            <button class="tab-btn" onclick="showComplianceTab('bmpTab', this)">Post-Construction BMP</button>
+            <button class="tab-btn" onclick="showComplianceTab('housekeepingTab', this)">Good Housekeeping</button>
+          </div>
+
+          <div class="tab-helper">
+            Select a compliance tab above. Each tab captures a different type of MS4/stormwater documentation so staff are not forced to scroll through every form at once.
+          </div>
+
+          <div id="permitTab" class="tab-panel active-tab">
+            <div class="panel">
+              <h3>1. MS4 Permit Profile Form</h3>
+              <p class="section-subtitle">Identifies the municipality, permit, reporting period, and responsible compliance staff.</p>
+              <div class="form-grid">
+                <div><label>City / Municipality</label><input type="text" placeholder="Example: City of Riverbend" /></div>
+                <div><label>Department</label><input type="text" placeholder="Example: Public Works / Stormwater" /></div>
+                <div><label>MS4 Permit Number</label><input type="text" placeholder="Example: GAR041000" /></div>
+                <div><label>State Environmental Agency</label><input type="text" placeholder="Example: Georgia EPD" /></div>
+                <div><label>Reporting Year</label><input type="text" placeholder="Example: 2026" /></div>
+                <div><label>Reporting Period Start Date</label><input type="date" /></div>
+                <div><label>Reporting Period End Date</label><input type="date" /></div>
+                <div><label>Permit Expiration Date</label><input type="date" /></div>
+                <div><label>Responsible Official</label><input type="text" placeholder="Name and title" /></div>
+                <div><label>Compliance Contact</label><input type="text" placeholder="Name, phone, email" /></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'MS4 Permit Profile saved as demo data.')">Save Permit Profile</button>
+            </div>
+          </div>
+
+          <div id="assetComplianceTab" class="tab-panel">
+            <div class="panel">
+              <h3>2. Stormwater Asset Compliance Form</h3>
+              <p class="section-subtitle">Tracks the infrastructure asset, location, condition, inspection status, and proof documentation.</p>
+              <div class="form-grid">
+                <div><label>Asset ID</label><input type="text" placeholder="Example: SW-002" /></div>
+                <div><label>Asset Type</label><select><option>Storm Drain</option><option>Outfall</option><option>Culvert</option><option>Pipe Segment</option><option>Retention Basin</option><option>BMP</option></select></div>
+                <div><label>Location</label><input type="text" placeholder="Street, landmark, or facility" /></div>
+                <div><label>GPS / Map Location</label><input type="text" placeholder="Latitude, longitude, or map link" /></div>
+                <div><label>Watershed / Drainage Area</label><input type="text" placeholder="Example: Flint River Basin" /></div>
+                <div><label>Asset Condition</label><select><option>Good</option><option>Fair</option><option>Poor</option><option>Critical</option></select></div>
+                <div><label>Last Inspection Date</label><input type="date" /></div>
+                <div><label>Risk Level</label><select><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></div>
+                <div><label>Photo Upload Placeholder</label><input type="file" /></div>
+                <div><label>Notes</label><input type="text" placeholder="Short asset notes" /></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Stormwater Asset Compliance record saved as demo data.')">Save Asset Compliance Record</button>
+            </div>
+          </div>
+
+          <div id="inspectionTab" class="tab-panel">
+            <div class="panel">
+              <h3>3. Inspection Log Form</h3>
+              <p class="section-subtitle">Documents who inspected what, when, what was found, and whether follow-up is required.</p>
+              <div class="form-grid">
+                <div><label>Inspection Date</label><input type="date" /></div>
+                <div><label>Inspector Name</label><input type="text" placeholder="Example: J. Carter" /></div>
+                <div><label>Asset / Location</label><input type="text" placeholder="Example: Riverbend Road Outfall" /></div>
+                <div><label>Inspection Type</label><select><option>Routine</option><option>Complaint Response</option><option>Post-Storm</option><option>Follow-Up</option><option>Annual</option></select></div>
+                <div><label>Condition Observed</label><select><option>Good</option><option>Fair</option><option>Poor</option><option>Critical</option></select></div>
+                <div><label>Issue Found</label><input type="text" placeholder="Example: Debris buildup, erosion, standing water" /></div>
+                <div><label>Severity Level</label><select><option>Low</option><option>Medium</option><option>High</option><option>Urgent</option></select></div>
+                <div><label>Photo Evidence</label><input type="file" /></div>
+                <div><label>Follow-Up Needed</label><select><option>Yes</option><option>No</option></select></div>
+                <div><label>Corrective Action Required</label><select><option>Yes</option><option>No</option><option>To Be Determined</option></select></div>
+                <div><label>Date Corrective Action Due</label><input type="date" /></div>
+                <div><label>Status</label><select><option>Open</option><option>Pending</option><option>Urgent</option><option>Closed</option></select></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Inspection Log saved as demo data.')">Save Inspection Log</button>
+            </div>
+          </div>
+
+          <div id="correctiveTab" class="tab-panel">
+            <div class="panel">
+              <h3>4. Corrective Action / Maintenance Follow-Up Form</h3>
+              <p class="section-subtitle">Proves the city acted after identifying a compliance or maintenance issue.</p>
+              <div class="form-grid">
+                <div><label>Issue ID</label><input type="text" placeholder="Example: ISS-1004" /></div>
+                <div><label>Related Asset</label><input type="text" placeholder="Example: SW-004 Oak Valley Culvert" /></div>
+                <div><label>Issue Description</label><input type="text" placeholder="Describe the issue" /></div>
+                <div><label>Date Identified</label><input type="date" /></div>
+                <div><label>Assigned To</label><input type="text" placeholder="Staff, crew, or contractor" /></div>
+                <div><label>Corrective Action Needed</label><input type="text" placeholder="Example: Remove debris and document repair" /></div>
+                <div><label>Priority Level</label><select><option>Low</option><option>Medium</option><option>High</option><option>Urgent</option></select></div>
+                <div><label>Due Date</label><input type="date" /></div>
+                <div><label>Completion Date</label><input type="date" /></div>
+                <div><label>Status</label><select><option>Open</option><option>Assigned</option><option>In Progress</option><option>Completed</option><option>Overdue</option></select></div>
+                <div><label>Photo Proof</label><input type="file" /></div>
+                <div><label>Completion Notes</label><input type="text" placeholder="What was completed?" /></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Corrective Action record saved as demo data.')">Save Corrective Action</button>
+            </div>
+          </div>
+
+          <div id="incidentTab" class="tab-panel">
+            <div class="panel">
+              <h3>5. Illicit Discharge / Pollution Incident Form</h3>
+              <p class="section-subtitle">Supports IDDE-style documentation for suspected pollution, discharge complaints, and investigations.</p>
+              <div class="form-grid">
+                <div><label>Incident Date</label><input type="date" /></div>
+                <div><label>Reported By</label><input type="text" placeholder="Resident, staff, contractor, anonymous" /></div>
+                <div><label>Location</label><input type="text" placeholder="Incident location" /></div>
+                <div><label>Type of Suspected Discharge</label><select><option>Oil / Sheen</option><option>Sewage</option><option>Chemical</option><option>Trash / Debris</option><option>Sediment</option><option>Unknown</option></select></div>
+                <div><label>Description</label><input type="text" placeholder="Describe what was observed" /></div>
+                <div><label>Water Color / Odor / Sheen Observed</label><input type="text" placeholder="Example: cloudy water, fuel odor, oily sheen" /></div>
+                <div><label>Photos Taken</label><select><option>Yes</option><option>No</option></select></div>
+                <div><label>Receiving Water / Drainage Area</label><input type="text" /></div>
+                <div><label>Investigation Status</label><select><option>New</option><option>Under Review</option><option>Referred</option><option>Resolved</option></select></div>
+                <div><label>Action Taken</label><input type="text" placeholder="Example: site visit, referral, cleanup" /></div>
+                <div><label>Referral Needed</label><select><option>No</option><option>Yes - Internal Department</option><option>Yes - State Agency</option><option>Yes - Enforcement</option></select></div>
+                <div><label>Resolution Date</label><input type="date" /></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Illicit Discharge / Pollution Incident record saved as demo data.')">Save Incident Record</button>
+            </div>
+          </div>
+
+          <div id="outreachTab" class="tab-panel">
+            <div class="panel">
+              <h3>6. Public Education / Outreach Activity Form</h3>
+              <p class="section-subtitle">Documents education, outreach, campaigns, workshops, and materials distributed to the public.</p>
+              <div class="form-grid">
+                <div><label>Activity Date</label><input type="date" /></div>
+                <div><label>Activity Type</label><select><option>Workshop</option><option>Website Post</option><option>Social Media</option><option>Flyer / Mailer</option><option>School Event</option><option>Community Event</option></select></div>
+                <div><label>Target Audience</label><input type="text" placeholder="Residents, schools, contractors, businesses" /></div>
+                <div><label>Topic Covered</label><input type="text" placeholder="Example: pollution prevention, yard waste, illicit discharge" /></div>
+                <div><label>Materials Distributed</label><input type="text" placeholder="Flyers, brochures, web links" /></div>
+                <div><label>Estimated Participants / Reach</label><input type="number" placeholder="Example: 250" /></div>
+                <div><label>Partner Organization</label><input type="text" /></div>
+                <div><label>Staff Responsible</label><input type="text" /></div>
+                <div><label>Evidence Uploaded</label><input type="file" /></div>
+                <div><label>Notes</label><input type="text" /></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Public Education / Outreach Activity saved as demo data.')">Save Outreach Activity</button>
+            </div>
+          </div>
+
+          <div id="participationTab" class="tab-panel">
+            <div class="panel">
+              <h3>7. Public Participation / Involvement Form</h3>
+              <p class="section-subtitle">Tracks public involvement, comments, volunteer activity, and follow-up from community events.</p>
+              <div class="form-grid">
+                <div><label>Event Date</label><input type="date" /></div>
+                <div><label>Event Name</label><input type="text" placeholder="Example: Stormwater Town Hall" /></div>
+                <div><label>Participation Type</label><select><option>Public Meeting</option><option>Volunteer Cleanup</option><option>Public Comment</option><option>Community Survey</option><option>Advisory Committee</option></select></div>
+                <div><label>Public Comments Received</label><input type="text" /></div>
+                <div><label>Volunteers / Attendees</label><input type="number" /></div>
+                <div><label>Issue Raised</label><input type="text" /></div>
+                <div><label>Response Provided</label><input type="text" /></div>
+                <div><label>Follow-Up Needed</label><select><option>No</option><option>Yes</option></select></div>
+                <div><label>Documentation Uploaded</label><input type="file" /></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Public Participation record saved as demo data.')">Save Public Participation Record</button>
+            </div>
+          </div>
+
+          <div id="constructionTab" class="tab-panel">
+            <div class="panel">
+              <h3>8. Construction Site Runoff Tracking Form</h3>
+              <p class="section-subtitle">Tracks construction-related stormwater concerns, BMPs, violations, and follow-up actions.</p>
+              <div class="form-grid">
+                <div><label>Project Name</label><input type="text" /></div>
+                <div><label>Site Location</label><input type="text" /></div>
+                <div><label>Permit / Project Number</label><input type="text" /></div>
+                <div><label>Developer / Contractor</label><input type="text" /></div>
+                <div><label>Inspection Date</label><input type="date" /></div>
+                <div><label>BMPs Present</label><select><option>Yes</option><option>No</option><option>Partial</option></select></div>
+                <div><label>Sediment Controls Working</label><select><option>Yes</option><option>No</option><option>Needs Review</option></select></div>
+                <div><label>Violation Observed</label><select><option>No</option><option>Yes</option></select></div>
+                <div><label>Notice Issued</label><select><option>No</option><option>Yes</option></select></div>
+                <div><label>Corrective Action Required</label><select><option>No</option><option>Yes</option></select></div>
+                <div><label>Follow-Up Date</label><input type="date" /></div>
+                <div><label>Status</label><select><option>Open</option><option>Pending Correction</option><option>Resolved</option></select></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Construction Site Runoff record saved as demo data.')">Save Construction Runoff Record</button>
+            </div>
+          </div>
+
+          <div id="bmpTab" class="tab-panel">
+            <div class="panel">
+              <h3>9. Post-Construction BMP Form</h3>
+              <p class="section-subtitle">Tracks long-term stormwater controls after construction is complete.</p>
+              <div class="form-grid">
+                <div><label>Project Name</label><input type="text" /></div>
+                <div><label>BMP Type</label><select><option>Retention Pond</option><option>Detention Basin</option><option>Bioretention Area</option><option>Permeable Pavement</option><option>Vegetated Swale</option><option>Other</option></select></div>
+                <div><label>Location</label><input type="text" /></div>
+                <div><label>Installation Date</label><input type="date" /></div>
+                <div><label>Maintenance Responsibility</label><input type="text" placeholder="City, HOA, private owner, contractor" /></div>
+                <div><label>Last Inspection Date</label><input type="date" /></div>
+                <div><label>Condition</label><select><option>Good</option><option>Fair</option><option>Poor</option><option>Failed</option></select></div>
+                <div><label>Maintenance Needed</label><select><option>No</option><option>Yes</option></select></div>
+                <div><label>Responsible Party</label><input type="text" /></div>
+                <div><label>Status</label><select><option>Active</option><option>Needs Maintenance</option><option>Under Review</option><option>Closed</option></select></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Post-Construction BMP record saved as demo data.')">Save BMP Record</button>
+            </div>
+          </div>
+
+          <div id="housekeepingTab" class="tab-panel">
+            <div class="panel">
+              <h3>10. Pollution Prevention / Good Housekeeping Form</h3>
+              <p class="section-subtitle">Documents how municipal operations prevent pollution from city facilities and activities.</p>
+              <div class="form-grid">
+                <div><label>Facility / Department</label><input type="text" placeholder="Example: Public Works Yard" /></div>
+                <div><label>Activity Type</label><select><option>Facility Inspection</option><option>Vehicle Washing</option><option>Material Storage</option><option>Salt / Chemical Storage</option><option>Staff Training</option><option>Spill Prevention</option></select></div>
+                <div><label>Inspection Date</label><input type="date" /></div>
+                <div><label>Material Storage Issue</label><select><option>No</option><option>Yes</option><option>Needs Review</option></select></div>
+                <div><label>Vehicle Washing Issue</label><select><option>No</option><option>Yes</option><option>Not Applicable</option></select></div>
+                <div><label>Salt / Chemical Storage Issue</label><select><option>No</option><option>Yes</option><option>Needs Review</option></select></div>
+                <div><label>Spill Prevention Measures</label><input type="text" placeholder="Example: spill kits, containment, staff training" /></div>
+                <div><label>Staff Training Completed</label><select><option>Yes</option><option>No</option><option>Scheduled</option></select></div>
+                <div><label>Issue Found</label><input type="text" /></div>
+                <div><label>Corrective Action</label><input type="text" /></div>
+                <div><label>Status</label><select><option>Compliant</option><option>Needs Follow-Up</option><option>Corrective Action Open</option><option>Resolved</option></select></div>
+              </div>
+              <button class="button secondary" onclick="showSaveMessage('complianceMsg', 'Good Housekeeping record saved as demo data.')">Save Good Housekeeping Record</button>
+            </div>
+          </div>
+
+          <div id="complianceMsg" class="info-strip" style="margin-top: 24px; display: none;"></div>
+        </section>
+
+        <section id="operationsLayer" class="page" data-title="Layer 2: Operations" data-subtitle="The stickiness layer: work orders, maintenance tracking, and contractor management.">
+          <h2 class="section-title">Layer 2: Operations Layer</h2>
+          <p class="section-subtitle">
+            Once the city uses StormRisk for compliance, the next step is making the platform useful every week. The operations layer turns inspection findings into action, accountability, and maintenance follow-through.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h3>Work Orders</h3>
+              <p>Create work orders from inspection findings, sensor alerts, high-risk assets, or citizen complaints.</p>
+            </div>
+            <div class="card">
+              <h3>Maintenance Tracking</h3>
+              <p>Track what was fixed, when it was fixed, who completed it, what evidence was uploaded, and what remains open.</p>
+            </div>
+            <div class="card">
+              <h3>Contractor Management</h3>
+              <p>Monitor contractor assignments, job verification, photo proof, timestamps, service quality, and completion history.</p>
+            </div>
+            <div class="card">
+              <h3>Why It Becomes Sticky</h3>
+              <p>If staff and contractors rely on StormRisk to manage daily tasks, the system becomes part of city operations.</p>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Operational Workflow</h3>
+            <ul class="priority-list">
+              <li><strong>Step 1:</strong> Inspection or sensor reading identifies an issue.</li>
+              <li><strong>Step 2:</strong> Staff creates a work order or follow-up action.</li>
+              <li><strong>Step 3:</strong> Crew or contractor completes the task and uploads documentation.</li>
+              <li><strong>Step 4:</strong> StormRisk updates the compliance record and maintenance history.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="financialLayer" class="page" data-title="Layer 3: Financial / Contract" data-subtitle="The power layer: RFPs, budgeting, vendor performance, and capital planning.">
+          <h2 class="section-title">Layer 3: Financial / Contract Layer</h2>
+          <p class="section-subtitle">
+            This is where StormRisk becomes hard to replace. The platform moves beyond tracking and operations into how municipalities plan projects, compare vendors, forecast budgets, and spend money.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h3>RFP Generation</h3>
+              <p>Generate project scopes, bid language, maintenance specifications, and documentation packages from asset and inspection data.</p>
+            </div>
+            <div class="card">
+              <h3>Budget Forecasting</h3>
+              <p>Use asset condition, maintenance history, and risk level to forecast upcoming stormwater infrastructure costs.</p>
+            </div>
+            <div class="card">
+              <h3>Vendor Performance</h3>
+              <p>Track contractor response time, completion quality, cost history, recurring issues, and documentation compliance.</p>
+            </div>
+            <div class="card">
+              <h3>Why It Is the Power Move</h3>
+              <p>When StormRisk supports budgeting, procurement, and vendor oversight, it becomes connected to how cities allocate funds.</p>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Future Financial Intelligence</h3>
+            <p>
+              The long-term opportunity is to connect infrastructure risk to financial decision-making. Instead of saying “this asset is high risk,” StormRisk can say “this asset may require funding, contractor review, or inclusion in the next capital improvement plan.”
+            </p>
+          </div>
+        </section>
+
+        <section id="strategicPosition" class="page" data-title="Strategic Position" data-subtitle="Own the niche: stormwater compliance for municipalities under EPA MS4 requirements.">
+          <h2 class="section-title">Strategic Position</h2>
+          <p class="section-subtitle">
+            StormRisk should not be positioned as generic water software. The strongest position is specific: stormwater compliance and infrastructure risk management for municipalities operating under EPA MS4 requirements.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h3>Not Generic</h3>
+              <p>Do not lead with “water software” or “asset tracking.” Those sound broad and replaceable.</p>
+            </div>
+            <div class="card">
+              <h3>Specific Niche</h3>
+              <p>Lead with stormwater compliance, municipal reporting, inspection visibility, and MS4-related documentation support.</p>
+            </div>
+            <div class="card">
+              <h3>Clear Buyer</h3>
+              <p>Municipal public works, stormwater, environmental compliance, city managers, and infrastructure departments.</p>
+            </div>
+            <div class="card">
+              <h3>Expansion Path</h3>
+              <p>After stormwater, expand into wastewater compliance, water treatment tracking, and environmental reporting.</p>
+            </div>
+          </div>
+
+          <div class="panel roadmap" style="margin-top: 24px;">
+            <h3>Scaling Strategy</h3>
+            <ul>
+              <li><strong>Land 3–5 cities manually.</strong> Learn the exact workflows, reports, and pain points.</li>
+              <li><strong>Productize everything.</strong> Turn spreadsheets, reports, checklists, and manual processes into features.</li>
+              <li><strong>Turn it into SaaS.</strong> Cities should log into StormRisk weekly to run compliance and operations.</li>
+              <li><strong>Own the niche.</strong> Be known for municipal stormwater compliance and risk visibility.</li>
+              <li><strong>Expand horizontally.</strong> Add wastewater, treatment tracking, and environmental reporting later.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="countyDirectory" class="page" data-title="County Compliance Directory" data-subtitle="County-by-county law, permit, source, and audit review tracker.">
+          <h2 class="section-title">County Compliance Directory</h2>
+          <p class="section-subtitle">
+            This page is the knowledge base for each county or municipality. Staff can identify the county, assign a reviewer, track EPA/state/USDA/local sources, and prepare an AI audit-readiness review using approved source material.
+          </p>
+
+          <div class="cards">
+            <div class="card"><h3>Counties Tracked</h3><p class="metric">5</p><p>Demo county profiles started.</p></div>
+            <div class="card"><h3>Source Library</h3><p class="metric">4</p><p>Federal, state, USDA, and local source categories.</p></div>
+            <div class="card"><h3>Assigned Reviewers</h3><p class="metric">3</p><p>Staff responsible for compliance review.</p></div>
+            <div class="card"><h3>Audit Readiness</h3><p class="metric">Draft</p><p>AI review is placeholder until connected to verified sources.</p></div>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Add County / Municipality Profile</h3>
+            <p class="section-subtitle">Use this to create a compliance profile for each county, city, or municipal MS4 program.</p>
+            <div class="form-grid">
+              <div><label>County</label><input id="countyName" type="text" placeholder="Example: Clayton County" /></div>
+              <div><label>City / Municipality</label><input id="municipalityName" type="text" placeholder="Example: City of Jonesboro" /></div>
+              <div><label>State</label><input id="directoryState" type="text" value="Georgia" /></div>
+              <div><label>MS4 Status</label><select id="ms4Status"><option>Phase I MS4</option><option>Phase II MS4</option><option>Not Confirmed</option><option>Rural / Non-MS4 Review Needed</option></select></div>
+              <div><label>Assigned Reviewer</label><input id="assignedReviewer" type="text" placeholder="Example: Compliance Analyst" /></div>
+              <div><label>Reviewer Email</label><input id="reviewerEmail" type="email" placeholder="reviewer@city.gov" /></div>
+              <div><label>State Agency</label><input id="stateAgency" type="text" placeholder="Example: Georgia EPD" /></div>
+              <div><label>Reporting Portal</label><input id="reportingPortal" type="text" placeholder="Example: GEOS / State Portal / Local System" /></div>
+            </div>
+            <button class="button" onclick="addCountyDirectoryRecord()">Add County Profile</button>
+            <p id="countyDirectoryMessage" style="margin-top: 12px; font-weight: bold; color: #145c63;"></p>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>County Directory Table</h3>
+            <div class="table-wrap">
+              <table id="countyDirectoryTable">
+                <thead>
+                  <tr>
+                    <th>County</th>
+                    <th>Municipality</th>
+                    <th>MS4 Status</th>
+                    <th>Assigned Reviewer</th>
+                    <th>State Agency</th>
+                    <th>Reporting Portal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Clayton County</td><td>City of Jonesboro</td><td>Phase II MS4</td><td>Compliance Analyst</td><td>Georgia EPD</td><td>GEOS / Local Records</td></tr>
+                  <tr><td>Gwinnett County</td><td>Lawrenceville</td><td>Phase II MS4</td><td>Stormwater Manager</td><td>Georgia EPD</td><td>GEOS / Annual Documentation</td></tr>
+                  <tr><td>Peach County</td><td>County Review</td><td>Rural / Non-MS4 Review Needed</td><td>Program Reviewer</td><td>Georgia EPD / USDA RD</td><td>State + USDA Source Review</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>Approved Compliance Source Library</h3>
+            <p class="section-subtitle">The AI should only analyze against verified sources entered here by staff or pulled from approved databases later.</p>
+            <div class="form-grid">
+              <div><label>EPA / Federal Source</label><input id="epaSource" type="text" value="40 CFR 122.34 / EPA MS4 Phase II guidance" /></div>
+              <div><label>State Source</label><input id="stateSource" type="text" value="Georgia EPD Municipal Stormwater / NPDES MS4 permit resources" /></div>
+              <div><label>USDA Source</label><input id="usdaSource" type="text" value="USDA Rural Development Water & Environmental Programs / environmental review / PER documentation" /></div>
+              <div><label>City / County Local Source</label><input id="localSource" type="text" placeholder="Local ordinance, stormwater manual, MS4 permit, SWMP, annual report" /></div>
+              <div><label>Permit / Report Document</label><input type="file" /></div>
+              <div><label>Reviewer Notes</label><input id="sourceNotes" type="text" placeholder="Notes on what the AI should check" /></div>
+            </div>
+            <button class="button secondary" onclick="showSaveMessage('countyDirectoryMessage', 'Compliance source library saved as demo data.')">Save Source Library</button>
+          </div>
+
+          <div class="panel" style="margin-top: 24px;">
+            <h3>AI Audit Review Setup</h3>
+            <p class="section-subtitle">This placeholder shows how the future AI agent will review county-specific documents against federal, state, USDA, and local requirements before an audit.</p>
+            <div class="form-grid">
+              <div><label>Select Review Type</label><select id="auditReviewType"><option>MS4 Annual Report Review</option><option>SWMP Documentation Review</option><option>Inspection File Audit</option><option>Corrective Action Audit</option><option>USDA Project Compliance Review</option><option>Local Ordinance Review</option></select></div>
+              <div><label>Audit Period</label><input id="auditPeriod" type="text" placeholder="Example: 2026 Reporting Year" /></div>
+              <div><label>County / Municipality to Review</label><input id="auditCounty" type="text" placeholder="Example: Clayton County / Jonesboro" /></div>
+              <div><label>Assigned Person</label><input id="auditAssignedPerson" type="text" placeholder="Example: Compliance Analyst" /></div>
+            </div>
+            <label>Documents / Requirements to Check</label>
+            <textarea id="auditChecklist">Check permit profile, inspection logs, illicit discharge records, corrective actions, public education, public participation, construction runoff controls, post-construction BMP records, good housekeeping documentation, and annual reporting readiness.</textarea>
+            <button class="button" onclick="runCountyAuditDemo()">Run AI Audit Readiness Demo</button>
+            <div id="countyAuditOutput" class="agent-output">AI audit-readiness output will appear here.</div>
+          </div>
+        </section>
+
+        <section id="resourceLibrary" class="page" data-title="Compliance Docs Library" data-subtitle="Source-first review console with bookmarks, verification, and AI review queue.">
+          <h2 class="section-title">Compliance Docs Library</h2>
+          <p class="section-subtitle">
+            This is a Layer 1: Compliance subpage. Staff use it to search plain-language compliance topics, open official source summaries, bookmark items for review, and verify the source set before any AI audit review is allowed.
+          </p>
+
+          <div class="docs-console">
+            <div class="docs-console-topbar">
+              <input id="docsConsoleSearch" class="docs-search" type="text" placeholder="Search docs: MS4, audit, missing photos, public outreach, construction runoff, USDA..." onkeyup="filterDocsConsole()" />
+              <select id="docsConsoleFilter" class="docs-search" onchange="filterDocsConsole()">
+                <option value="">All Sources</option>
+                <option value="federal">Federal / EPA</option>
+                <option value="state">State</option>
+                <option value="local">County / City</option>
+                <option value="usda">USDA / Rural</option>
+                <option value="quick">Plain Language</option>
+              </select>
+              <button class="button" onclick="runBookmarkedReview()">Review Bookmarks</button>
+            </div>
+
+            <div class="docs-console-body">
+              <aside class="docs-nav-panel">
+                <div class="docs-nav-label">Plain Language</div>
+                <button class="docs-nav-btn active" onclick="openDocsCategory('docsHome', this)">Welcome / Quick Start</button>
+                <button class="docs-nav-btn" onclick="openDocsCategory('plainDirectory', this)">Quick Directory</button>
+                <button class="docs-nav-btn" onclick="openDocsCategory('missingChecklist', this)">What You May Be Missing</button>
+
+                <div class="docs-nav-label">Federal Sources</div>
+                <button class="docs-nav-btn" onclick="openSourceDetail('40 CFR § 122.34', 'Federal / EPA', 'Verified Source Type', 'Defines small MS4 permit expectations, measurable permit terms, and the six minimum control measures.', 'MS4, permit, minimum control measures, annual report, measurable goals', 'Check whether the local file documents permit profile, minimum control measures, inspection support, corrective actions, and annual reporting proof.', 'Missing permit number, missing annual report support, missing public education evidence, incomplete corrective action records.')">40 CFR § 122.34</button>
+                <button class="docs-nav-btn" onclick="openSourceDetail('EPA NPDES State Program Authority', 'Federal / EPA', 'Verified Source Type', 'Helps confirm which state or program has NPDES authority and where state-specific requirements should be checked.', 'NPDES, state authority, EPA, program authorization', 'Check whether the correct state agency and reporting portal are identified.', 'State agency may be wrong, portal may be missing, EPA/state authority may not be confirmed.')">EPA NPDES Authority</button>
+                <button class="docs-nav-btn" onclick="openSourceDetail('Clean Water Act / NPDES Framework', 'Federal / EPA', 'Review Before Use', 'General federal framework for discharge permitting and stormwater program authority.', 'Clean Water Act, NPDES, discharge, stormwater', 'Check whether the project or activity touches stormwater discharge, permitting, reporting, or enforcement.', 'Federal framework may be cited without the specific state/local permit source.')">CWA / NPDES</button>
+
+                <div class="docs-nav-label">State Sources</div>
+                <button class="docs-nav-btn" onclick="openSourceDetail('Georgia EPD Municipal Stormwater', 'State', 'Needs Source Verification', 'State source area for Georgia MS4 permitting, municipal stormwater compliance, and reporting resources.', 'Georgia, EPD, MS4, GEOS, annual report, municipal stormwater', 'Check the correct Georgia permit, reporting portal, annual report instructions, and state-specific MS4 expectations.', 'GEOS portal may be missing, state permit may not be attached, annual report instructions may be unverified.')">Georgia</button>
+                <button class="docs-nav-btn" onclick="openSourceDetail('Florida DEP Stormwater / NPDES', 'State', 'Needs Source Verification', 'State source area for Florida stormwater and NPDES-related program review.', 'Florida, DEP, stormwater, NPDES, MS4', 'Check Florida state source links, permit documents, portal, and local requirements.', 'State source needs verification before AI use.')">Florida</button>
+                <button class="docs-nav-btn" onclick="openSourceDetail('Texas TCEQ TPDES / MS4', 'State', 'Needs Source Verification', 'State source area for Texas TPDES stormwater and MS4 review.', 'Texas, TCEQ, TPDES, MS4, stormwater', 'Check Texas permit, portal, MS4 rules, and local requirements.', 'State source needs verification before AI use.')">Texas</button>
+                <button class="docs-nav-btn" onclick="openDocsCategory('stateDirectoryFull', this)">Full State Directory</button>
+
+                <div class="docs-nav-label">Local / County</div>
+                <button class="docs-nav-btn" onclick="openSourceDetail('County / City MS4 Permit', 'Local', 'Needs Human Review', 'Local permit or SWMP source used to determine the actual city/county obligations.', 'county, city, MS4 permit, SWMP, ordinance, annual report', 'Check the local permit, SWMP, stormwater manual, ordinances, SOPs, and annual reports.', 'Local ordinance may be missing, SWMP may be outdated, annual report may be unsupported.')">MS4 Permit / SWMP</button>
+                <button class="docs-nav-btn" onclick="openSourceDetail('Local Ordinance / Stormwater Manual', 'Local', 'Needs Human Review', 'Local rule source that controls design standards, enforcement, maintenance, and inspection expectations.', 'ordinance, manual, local rules, design standards, enforcement', 'Check city/county stormwater ordinance, design manual, enforcement SOP, and maintenance requirements.', 'Manual may be outdated, ordinance may be missing, local enforcement procedure may not be attached.')">Ordinance / Manual</button>
+
+                <div class="docs-nav-label">USDA / Rural</div>
+                <button class="docs-nav-btn" onclick="openSourceDetail('USDA Rural Development Water & Environmental Programs', 'USDA / Rural', 'Review Before Use', 'Used when rural water, wastewater, storm drainage, environmental review, engineering, or funding requirements may apply.', 'USDA, rural, funding, PER, environmental review, water, wastewater', 'Check funding source, engineering report, environmental review, project file, and state/federal coordination.', 'USDA applicability may be unclear, environmental review may be missing, engineering documents may be incomplete.')">USDA WEP</button>
+
+                <div class="docs-nav-label">Controls</div>
+                <button class="docs-nav-btn" onclick="openDocsCategory('aiGateConsole', this)">AI Source Gate</button>
+                <button class="docs-nav-btn" onclick="openDocsCategory('bookmarksConsole', this)">Bookmarks / Review Queue</button>
+              </aside>
+
+              <main class="docs-main-panel">
+                <section id="docsHome" class="docs-console-section">
+                  <h1 class="docs-hero-title">Compliance Docs Library</h1>
+                  <p class="docs-muted">Search, verify, bookmark, and prepare official compliance sources before any AI agent is allowed to review a file.</p>
+
+                  <div class="docs-card-grid">
+                    <div class="docs-card">
+                      <h3>Federal / EPA Sources</h3>
+                      <p>Core federal rules, EPA program references, NPDES framework, and MS4 requirements.</p>
+                    </div>
+                    <div class="docs-card">
+                      <h3>USA State Directory</h3>
+                      <p>State-by-state environmental agency, MS4 source, reporting portal, and verification status.</p>
+                    </div>
+                    <div class="docs-card">
+                      <h3>Plain-Language Directory</h3>
+                      <p>Helps non-technical staff search by normal words like audit, missing photos, inspection, outreach, or construction.</p>
+                    </div>
+                    <div class="docs-card">
+                      <h3>Bookmarks / AI Review Queue</h3>
+                      <p>Staff bookmark only the sources that should be used for completeness checks and future AI review.</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="plainDirectory" class="docs-console-section hidden">
+                  <h1 class="docs-hero-title">Plain-Language Quick Directory</h1>
+                  <p class="docs-muted">Use this when staff do not know the official regulation name.</p>
+                  <div class="docs-source-list" id="docsQuickCards">
+                    <div class="docs-source-item" data-type="quick" data-keywords="audit missing docs report proof annual report" onclick="openSourceDetail('Audit Readiness Check', 'Plain Language', 'Quick Lookup', 'Use this when staff want to know what may be missing before a report or audit.', 'audit, missing documents, proof, annual report, review', 'Check permit profile, source verification, annual report claims, inspections, corrective actions, and public outreach proof.', 'Unsupported claims, missing photos, incomplete corrective actions, unverified state/local sources.')"><h3>Audit Readiness Check</h3><p>Find missing proof before submitting a report or facing an audit.</p></div>
+                    <div class="docs-source-item" data-type="quick" data-keywords="inspection field notes photos follow up corrective action" onclick="openSourceDetail('Inspection Documentation', 'Plain Language', 'Quick Lookup', 'Use this when staff inspected a drain, outfall, culvert, BMP, construction site, or facility.', 'inspection, photos, field notes, follow-up, condition', 'Check inspection date, inspector, location, condition, issue found, photo evidence, and follow-up status.', 'Missing inspector name, missing date, no photo evidence, unclear follow-up status.')"><h3>Inspection Documentation</h3><p>Check whether inspection proof is complete.</p></div>
+                    <div class="docs-source-item" data-type="quick" data-keywords="public outreach education flyers participants reach" onclick="openSourceDetail('Public Education / Outreach', 'Plain Language', 'Quick Lookup', 'Use this when the city needs to prove public education or outreach activity.', 'outreach, education, flyers, social media, participants, reach', 'Check topic, audience, materials distributed, date, staff responsible, and proof of reach.', 'Audience missing, materials missing, no reach count, no evidence uploaded.')"><h3>Public Education / Outreach</h3><p>Check outreach proof and missing evidence.</p></div>
+                    <div class="docs-source-item" data-type="quick" data-keywords="construction runoff bmp sediment violation erosion" onclick="openSourceDetail('Construction Runoff', 'Plain Language', 'Quick Lookup', 'Use this when a construction site may have sediment, erosion, BMP failure, runoff, or permit issues.', 'construction, runoff, BMP, sediment, erosion, violation', 'Check BMPs, sediment controls, inspection date, violation status, notice issued, corrective action, and follow-up.', 'BMP condition missing, violation notice missing, no follow-up date, contractor not identified.')"><h3>Construction Runoff</h3><p>Check construction-related stormwater documentation.</p></div>
+                    <div class="docs-source-item" data-type="quick" data-keywords="usda rural funding water environmental program environmental review engineering" onclick="openSourceDetail('USDA / Rural Project Review', 'Plain Language', 'Quick Lookup', 'Use this when rural funding, USDA RD, infrastructure grants, environmental review, or engineering documents may apply.', 'USDA, rural, funding, environmental review, engineering, PER', 'Check funding source, project file, engineering documentation, environmental review, and coordination records.', 'Funding source unclear, environmental review missing, engineering documents incomplete.')"><h3>USDA / Rural Project Review</h3><p>Check rural funding and project review requirements.</p></div>
+                  </div>
+                </section>
+
+                <section id="missingChecklist" class="docs-console-section hidden">
+                  <h1 class="docs-hero-title">What You May Be Missing</h1>
+                  <p class="docs-muted">A simple checklist for non-technical users.</p>
+                  <div class="docs-detail-box">
+                    <h3>Common Missing Items</h3>
+                    <ul>
+                      <li>MS4 permit number or reporting period not documented.</li>
+                      <li>State agency / reporting portal not verified.</li>
+                      <li>Inspection logs missing date, inspector, location, or photos.</li>
+                      <li>Corrective action records missing completion date or proof.</li>
+                      <li>Public education/outreach lacks audience, reach, or evidence.</li>
+                      <li>Construction runoff records missing BMP status or follow-up.</li>
+                      <li>Local ordinance, SWMP, annual report, or stormwater manual not attached.</li>
+                      <li>USDA funding/project documents missing environmental review or engineering support.</li>
+                      <li>Human reviewer has not approved sources for AI use.</li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section id="stateDirectoryFull" class="docs-console-section hidden">
+                  <h1 class="docs-hero-title">USA State Directory</h1>
+                  <p class="docs-muted">Seeded state source tracker. In the real product, each state should link to official state agency pages, MS4 permits, reporting portals, and deadlines.</p>
+                  <div class="docs-source-list">
+                    <div class="docs-source-item" data-type="state" data-keywords="georgia epd geos municipal stormwater ms4" onclick="openSourceDetail('Georgia EPD Municipal Stormwater', 'State', 'Seeded / Verify Official Links', 'Georgia source profile for municipal stormwater and MS4 permit review.', 'Georgia, EPD, GEOS, MS4, annual report', 'Check state agency, reporting portal, MS4 permit, local permit, and annual report support.', 'Official links and local documents must be verified before AI use.')"><h3>Georgia</h3><p>Georgia EPD / Municipal Stormwater / GEOS</p></div>
+                    <div class="docs-source-item" data-type="state" data-keywords="florida dep stormwater npdes ms4" onclick="openSourceDetail('Florida DEP Stormwater / NPDES', 'State', 'Needs Source Verification', 'Florida source profile for stormwater and NPDES/MS4 review.', 'Florida, DEP, NPDES, MS4, stormwater', 'Check state program source, permit page, reporting portal, and local documents.', 'Official links must be verified before AI use.')"><h3>Florida</h3><p>Florida DEP / Stormwater / NPDES</p></div>
+                    <div class="docs-source-item" data-type="state" data-keywords="texas tceq tpdes ms4 stormwater" onclick="openSourceDetail('Texas TCEQ TPDES / MS4', 'State', 'Needs Source Verification', 'Texas source profile for TPDES and MS4 stormwater review.', 'Texas, TCEQ, TPDES, MS4', 'Check state permit, TCEQ portal, local MS4 documents, and reporting instructions.', 'Official links must be verified before AI use.')"><h3>Texas</h3><p>TCEQ / TPDES / MS4 Stormwater</p></div>
+                    <div class="docs-source-item" data-type="state" data-keywords="north carolina deq npdes ms4 stormwater" onclick="openSourceDetail('North Carolina DEQ NPDES MS4', 'State', 'Needs Source Verification', 'North Carolina source profile for MS4 stormwater review.', 'North Carolina, NC DEQ, NPDES, MS4', 'Check state permit source, portal, local documents, and annual reporting instructions.', 'Official links must be verified before AI use.')"><h3>North Carolina</h3><p>NC DEQ / NPDES MS4 Stormwater</p></div>
+                  </div>
+                </section>
+
+                <section id="aiGateConsole" class="docs-console-section hidden">
+                  <h1 class="docs-hero-title">AI Source Gate</h1>
+                  <p class="docs-muted">The AI stays locked until sources are verified and bookmarked.</p>
+                  <div class="docs-detail-box">
+                    <div class="form-grid">
+                      <div><label style="color:#e5e7eb;">Federal Sources Verified</label><select id="consoleFederalVerified"><option>No</option><option>Yes</option></select></div>
+                      <div><label style="color:#e5e7eb;">State Sources Verified</label><select id="consoleStateVerified"><option>No</option><option>Yes</option></select></div>
+                      <div><label style="color:#e5e7eb;">Local Sources Verified</label><select id="consoleLocalVerified"><option>No</option><option>Yes</option></select></div>
+                      <div><label style="color:#e5e7eb;">USDA Sources Verified</label><select id="consoleUsdaVerified"><option>Not Applicable</option><option>No</option><option>Yes</option></select></div>
+                      <div><label style="color:#e5e7eb;">Human Reviewer Approval</label><select id="consoleHumanApproval"><option>No</option><option>Yes</option></select></div>
+                      <div><label style="color:#e5e7eb;">Reviewer Name</label><input id="consoleReviewerName" type="text" placeholder="Compliance lead" /></div>
+                    </div>
+                    <button class="button" onclick="runConsoleGateCheck()">Check Gate</button>
+                    <div id="consoleGateOutput" class="agent-output">Gate result will appear here.</div>
+                  </div>
+                </section>
+
+                <section id="bookmarksConsole" class="docs-console-section hidden">
+                  <h1 class="docs-hero-title">Bookmarks / Review Queue</h1>
+                  <p class="docs-muted">Only bookmarked and verified sources should be used for AI review later.</p>
+                  <div class="docs-detail-box">
+                    <h3>Bookmarked Sources</h3>
+                    <div id="bookmarksMainList" class="bookmark-list">No bookmarked sources yet.</div>
+                    <button class="button" onclick="runBookmarkedReview()">Run Completeness Review Placeholder</button>
+                    <div id="bookmarkReviewOutput" class="agent-output">Review output will appear here.</div>
+                  </div>
+                </section>
+
+                <section id="sourceDetailConsole" class="docs-console-section hidden">
+                  <h1 id="sourceDetailTitle" class="docs-hero-title">Source Detail</h1>
+                  <div class="docs-pill-row">
+                    <span id="sourceDetailType" class="docs-pill">Source Type</span>
+                    <span id="sourceDetailStatus" class="docs-pill warning">Status</span>
+                  </div>
+                  <p id="sourceDetailSummary" class="docs-muted"></p>
+                  <div class="docs-detail-box">
+                    <h3>Keywords</h3>
+                    <p id="sourceDetailKeywords" class="docs-muted"></p>
+                    <br />
+                    <h3>What This Helps Verify</h3>
+                    <p id="sourceDetailCheck" class="docs-muted"></p>
+                    <br />
+                    <h3>What Might Be Missing</h3>
+                    <p id="sourceDetailMissing" class="docs-muted"></p>
+                    <br />
+                    <button class="button" onclick="bookmarkCurrentSource()">Bookmark for Review</button>
+                    <button class="button secondary" onclick="markCurrentSourceVerified()" style="margin-left: 10px;">Mark Verified</button>
+                  </div>
+                </section>
+              </main>
+
+              <aside class="docs-review-panel">
+                <h3 style="color:white;">Review Queue</h3>
+                <p class="docs-muted">Bookmarked sources appear here. The AI should only review against approved bookmarked sources.</p>
+                <div id="bookmarksSideList" class="bookmark-list">No bookmarks yet.</div>
+
+                <div class="docs-detail-box">
+                  <h4>Audit Readiness</h4>
+                  <div class="review-score" id="readinessScore">Locked</div>
+                  <p class="docs-muted" id="readinessText">Verify sources before AI review.</p>
+                </div>
+              </aside>
+            </div>
           </div>
         </section>
 
@@ -980,9 +2099,332 @@
       } else {
         const matchingButton = Array.from(navButtons).find(button => {
           const text = button.innerText.toLowerCase();
+          if (pageId === 'resourceLibrary') return text.includes('compliance docs library') || text.includes('compliance docs extension') || text.includes('compliance resource library');
+          if (pageId === 'countyDirectory') return text.includes('county compliance directory');
           return text.includes(pageId.toLowerCase()) || (pageId === 'reports' && text.includes('report'));
         });
         if (matchingButton) matchingButton.classList.add('active');
+      }
+    }
+
+    let currentSource = null;
+    let bookmarkedSources = [];
+    let verifiedSources = [];
+
+    function hideDocsConsoleSections() {
+      const sections = document.querySelectorAll('#resourceLibrary .docs-console-section');
+      sections.forEach(section => section.classList.add('hidden'));
+    }
+
+    function openDocsCategory(sectionId, clickedButton) {
+      hideDocsConsoleSections();
+      const section = document.getElementById(sectionId);
+      if (section) section.classList.remove('hidden');
+
+      const buttons = document.querySelectorAll('#resourceLibrary .docs-nav-btn');
+      buttons.forEach(button => button.classList.remove('active'));
+      if (clickedButton) clickedButton.classList.add('active');
+    }
+
+    function openSourceDetail(title, type, status, summary, keywords, checkText, missingText) {
+      currentSource = { title, type, status, summary, keywords, checkText, missingText, verified: status.toLowerCase().includes('verified') };
+      hideDocsConsoleSections();
+      document.getElementById('sourceDetailConsole').classList.remove('hidden');
+      document.getElementById('sourceDetailTitle').innerText = title;
+      document.getElementById('sourceDetailType').innerText = type;
+      document.getElementById('sourceDetailStatus').innerText = status;
+      document.getElementById('sourceDetailSummary').innerText = summary;
+      document.getElementById('sourceDetailKeywords').innerText = keywords;
+      document.getElementById('sourceDetailCheck').innerText = checkText;
+      document.getElementById('sourceDetailMissing').innerText = missingText;
+    }
+
+    function bookmarkCurrentSource() {
+      if (!currentSource) return;
+      const exists = bookmarkedSources.some(item => item.title === currentSource.title);
+      if (!exists) bookmarkedSources.push({ ...currentSource });
+      renderBookmarks();
+    }
+
+    function markCurrentSourceVerified() {
+      if (!currentSource) return;
+      currentSource.verified = true;
+      currentSource.status = 'Verified by Reviewer';
+      const exists = verifiedSources.some(item => item.title === currentSource.title);
+      if (!exists) verifiedSources.push(currentSource.title);
+      document.getElementById('sourceDetailStatus').innerText = 'Verified by Reviewer';
+      bookmarkCurrentSource();
+      renderBookmarks();
+    }
+
+    function renderBookmarks() {
+      const sideList = document.getElementById('bookmarksSideList');
+      const mainList = document.getElementById('bookmarksMainList');
+      const markup = bookmarkedSources.length
+        ? bookmarkedSources.map(item => `<div class="bookmark-item"><strong>${item.title}</strong><br /><span>${item.type}</span><br /><small>${item.verified || verifiedSources.includes(item.title) ? 'Verified / AI eligible' : 'Needs verification before AI use'}</small></div>`).join('')
+        : 'No bookmarked sources yet.';
+
+      if (sideList) sideList.innerHTML = markup;
+      if (mainList) mainList.innerHTML = markup;
+    }
+
+    function runBookmarkedReview() {
+      const output = document.getElementById('bookmarkReviewOutput');
+      const score = document.getElementById('readinessScore');
+      const text = document.getElementById('readinessText');
+      const hasBookmarks = bookmarkedSources.length > 0;
+      const allVerified = hasBookmarks && bookmarkedSources.every(item => item.verified || verifiedSources.includes(item.title));
+
+      if (!hasBookmarks) {
+        if (output) output.innerHTML = '<strong>Review blocked:</strong> No sources have been bookmarked. Search or open a source, then bookmark it for review.';
+        if (score) score.innerText = 'Locked';
+        if (text) text.innerText = 'No source set selected.';
+        return;
+      }
+
+      if (!allVerified) {
+        if (output) output.innerHTML = '<strong>Review blocked:</strong> Some bookmarked sources still need human verification before AI can use them.';
+        if (score) score.innerText = 'Blocked';
+        if (text) text.innerText = 'Verify all bookmarked sources first.';
+        return;
+      }
+
+      if (output) {
+        output.innerHTML = `
+          <h3>Completeness Review Placeholder</h3>
+          <p>The selected source set is verified and ready for a future AI review.</p>
+          <ul>
+            <li>Check permit profile and reporting period.</li>
+            <li>Check inspection logs and photo evidence.</li>
+            <li>Check corrective action proof.</li>
+            <li>Check outreach, participation, construction runoff, BMP, and good housekeeping records.</li>
+            <li>Flag unsupported claims before final audit submission.</li>
+          </ul>
+        `;
+      }
+      if (score) score.innerText = 'Ready';
+      if (text) text.innerText = 'Bookmarked sources verified. Future AI review may proceed.';
+    }
+
+    function runConsoleGateCheck() {
+      const federal = document.getElementById('consoleFederalVerified').value;
+      const state = document.getElementById('consoleStateVerified').value;
+      const local = document.getElementById('consoleLocalVerified').value;
+      const usda = document.getElementById('consoleUsdaVerified').value;
+      const human = document.getElementById('consoleHumanApproval').value;
+      const reviewer = document.getElementById('consoleReviewerName').value || 'Human reviewer not entered';
+      const output = document.getElementById('consoleGateOutput');
+      const usdaPass = usda === 'Yes' || usda === 'Not Applicable';
+      const approved = federal === 'Yes' && state === 'Yes' && local === 'Yes' && usdaPass && human === 'Yes';
+
+      if (approved) {
+        output.innerHTML = `<h3>Gate Approved</h3><p>Source verification is approved by <strong>${reviewer}</strong>. Future AI review can use only verified and bookmarked sources.</p>`;
+      } else {
+        output.innerHTML = '<h3>Gate Blocked</h3><p>AI review remains locked. Verify federal, state, local, applicable USDA sources, and obtain human reviewer approval.</p>';
+      }
+    }
+
+    function filterDocsConsole() {
+      const query = document.getElementById('docsConsoleSearch')?.value.toLowerCase() || '';
+      const filter = document.getElementById('docsConsoleFilter')?.value.toLowerCase() || '';
+      const items = document.querySelectorAll('#resourceLibrary .docs-source-item');
+
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase() + ' ' + (item.dataset.keywords || '').toLowerCase();
+        const type = (item.dataset.type || '').toLowerCase();
+        const matchesQuery = query === '' || text.includes(query);
+        const matchesFilter = filter === '' || type.includes(filter) || text.includes(filter);
+        item.style.display = matchesQuery && matchesFilter ? '' : 'none';
+      });
+    }
+
+    function globalDocsSearch() {
+      const query = document.getElementById('globalDocsSearch')?.value.toLowerCase() || '';
+      const filter = document.getElementById('globalDocsFilter')?.value.toLowerCase() || '';
+      const cards = document.querySelectorAll('#resourceLibrary .source-card');
+      const stateRows = document.querySelectorAll('#stateDirectoryTable tbody tr');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const matchesQuery = text.includes(query);
+        const matchesFilter = filter === '' || text.includes(filter) || card.closest('.docs-section')?.id.toLowerCase().includes(filter);
+        card.style.display = matchesQuery && matchesFilter ? '' : 'none';
+      });
+
+      stateRows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) || query === '' ? '' : 'none';
+      });
+    }
+
+    function filterQuickDirectory() {
+      const query = document.getElementById('quickDirectorySearch')?.value.toLowerCase() || '';
+      const role = document.getElementById('quickRoleFilter')?.value.toLowerCase() || '';
+      const cards = document.querySelectorAll('#quickDirectoryGrid .quick-card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase() + ' ' + (card.dataset.keywords || '').toLowerCase();
+        const roles = (card.dataset.role || '').toLowerCase();
+        const matchesQuery = query === '' || text.includes(query);
+        const matchesRole = role === '' || roles.includes(role);
+        card.style.display = matchesQuery && matchesRole ? '' : 'none';
+      });
+    }
+
+    function showDocsSection(sectionId, clickedButton) {
+      const sections = document.querySelectorAll('#resourceLibrary .docs-section');
+      sections.forEach(section => section.classList.remove('active-docs-section'));
+
+      const selectedSection = document.getElementById(sectionId);
+      if (selectedSection) selectedSection.classList.add('active-docs-section');
+
+      const docsLinks = document.querySelectorAll('#resourceLibrary .docs-link');
+      docsLinks.forEach(link => link.classList.remove('active'));
+      if (clickedButton) clickedButton.classList.add('active');
+    }
+
+    function markSourceChecked(message) {
+      const msg = document.getElementById('resourceLibraryMsg');
+      if (msg) {
+        msg.style.display = 'block';
+        msg.innerText = message;
+      }
+    }
+
+    function filterStateDirectory() {
+      const search = document.getElementById('stateSearch').value.toLowerCase();
+      const status = document.getElementById('stateStatusFilter').value.toLowerCase();
+      const rows = document.querySelectorAll('#stateDirectoryTable tbody tr');
+
+      rows.forEach(row => {
+        const rowText = row.innerText.toLowerCase();
+        const rowStatus = row.children[4].innerText.toLowerCase();
+        const matchesSearch = rowText.includes(search);
+        const matchesStatus = status === '' || rowStatus === status;
+        row.style.display = matchesSearch && matchesStatus ? '' : 'none';
+      });
+    }
+
+    function addStateSource() {
+      const state = document.getElementById('newStateName').value.trim();
+      const agency = document.getElementById('newStateAgency').value.trim();
+      const stormwater = document.getElementById('newStateStormwater').value.trim();
+      const portal = document.getElementById('newStatePortal').value.trim();
+      const msg = document.getElementById('stateSourceMsg');
+
+      if (!state || !agency) {
+        msg.innerText = 'Please enter at least State and Primary Environmental / NPDES Source.';
+        return;
+      }
+
+      const tbody = document.querySelector('#stateDirectoryTable tbody');
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${state}</td>
+        <td>${agency}</td>
+        <td>${stormwater || 'MS4 / stormwater source needed'}</td>
+        <td>${portal || 'Portal needed'}</td>
+        <td>Needs Source Verification</td>
+      `;
+      tbody.appendChild(row);
+
+      document.getElementById('newStateName').value = '';
+      document.getElementById('newStateAgency').value = '';
+      document.getElementById('newStateStormwater').value = '';
+      document.getElementById('newStatePortal').value = '';
+      msg.innerText = 'State source added. Mark as verified only after human review.';
+    }
+
+    function runAIGateCheck() {
+      const federal = document.getElementById('federalVerified').value;
+      const state = document.getElementById('stateVerified').value;
+      const local = document.getElementById('localVerified').value;
+      const usda = document.getElementById('usdaVerified').value;
+      const human = document.getElementById('humanApproval').value;
+      const reviewer = document.getElementById('gateReviewer').value || 'Human reviewer not entered';
+      const output = document.getElementById('aiGateOutput');
+
+      const usdaPass = usda === 'Yes' || usda === 'Not Applicable';
+      const approved = federal === 'Yes' && state === 'Yes' && local === 'Yes' && usdaPass && human === 'Yes';
+
+      if (approved) {
+        output.innerHTML = `<h3>AI Source Gate: Approved</h3><p>Federal, state, local, and applicable USDA sources have been verified. Human reviewer approval is recorded for <strong>${reviewer}</strong>. AI audit-readiness review may proceed using approved sources only.</p>`;
+      } else {
+        output.innerHTML = `<h3>AI Source Gate: Blocked</h3><p>The AI should not issue audit-readiness conclusions yet. Missing verification detected. Required before AI use: federal source check, state source check, local source check, applicable USDA source check, and human reviewer approval.</p>`;
+      }
+    }
+
+    function addCountyDirectoryRecord() {
+      const county = document.getElementById('countyName').value.trim();
+      const municipality = document.getElementById('municipalityName').value.trim();
+      const ms4Status = document.getElementById('ms4Status').value;
+      const reviewer = document.getElementById('assignedReviewer').value.trim();
+      const stateAgency = document.getElementById('stateAgency').value.trim();
+      const portal = document.getElementById('reportingPortal').value.trim();
+      const message = document.getElementById('countyDirectoryMessage');
+
+      if (!county || !municipality || !reviewer) {
+        message.innerText = 'Please enter County, Municipality, and Assigned Reviewer.';
+        return;
+      }
+
+      const tbody = document.querySelector('#countyDirectoryTable tbody');
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${county}</td>
+        <td>${municipality}</td>
+        <td>${ms4Status}</td>
+        <td>${reviewer}</td>
+        <td>${stateAgency || 'State agency not entered'}</td>
+        <td>${portal || 'Portal not entered'}</td>
+      `;
+      tbody.appendChild(row);
+      message.innerText = 'County compliance profile added to the directory.';
+    }
+
+    function runCountyAuditDemo() {
+      const output = document.getElementById('countyAuditOutput');
+      const county = document.getElementById('auditCounty').value || 'selected county / municipality';
+      const person = document.getElementById('auditAssignedPerson').value || 'assigned reviewer';
+      const reviewType = document.getElementById('auditReviewType').value;
+      const period = document.getElementById('auditPeriod').value || 'selected audit period';
+      const checklist = document.getElementById('auditChecklist').value;
+
+      output.innerHTML = `
+        <h3>AI Audit Readiness Demo</h3>
+        <p><strong>Review Type:</strong> ${reviewType}</p>
+        <p><strong>County / Municipality:</strong> ${county}</p>
+        <p><strong>Audit Period:</strong> ${period}</p>
+        <p><strong>Assigned Reviewer:</strong> ${person}</p>
+        <br />
+        <p><strong>AI Review Logic:</strong> The future AI should compare the uploaded county documents and staff entries against approved federal, state, USDA, and local source records stored in the source library.</p>
+        <br />
+        <p><strong>Checklist Reviewed:</strong> ${checklist}</p>
+        <br />
+        <p><strong>Demo Finding:</strong> The AI would flag missing documents, overdue inspections, incomplete corrective action records, missing public education evidence, and unsupported annual report claims before the city submits or faces an audit.</p>
+      `;
+    }
+
+    function showComplianceTab(tabId, clickedButton) {
+      const panels = document.querySelectorAll('#complianceLayer .tab-panel');
+      panels.forEach(panel => panel.classList.remove('active-tab'));
+
+      const selectedPanel = document.getElementById(tabId);
+      if (selectedPanel) selectedPanel.classList.add('active-tab');
+
+      const tabButtons = document.querySelectorAll('#complianceLayer .tab-btn');
+      tabButtons.forEach(button => button.classList.remove('active'));
+      if (clickedButton) clickedButton.classList.add('active');
+
+      const msg = document.getElementById('complianceMsg');
+      if (msg) msg.style.display = 'none';
+    }
+
+    function showSaveMessage(elementId, message) {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.style.display = 'block';
+        element.innerText = message;
       }
     }
 
